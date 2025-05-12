@@ -1,5 +1,8 @@
 <?php
 define('SITE_ROOT', __DIR__.'/../');
+
+require_once(SITE_ROOT.'app/view/public/template_engine.php');
+
 // var_dump($_GET);
 // var_dump($_SERVER["REQUEST_URI"]);
 

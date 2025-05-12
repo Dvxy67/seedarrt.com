@@ -1,14 +1,7 @@
 <?php
-echo 'hdkhfg';
-function send()
-{
-    // save_message($_POST);
-    // send_sms($_POST);
+function home(){
 
-    echo 'function send()';
+    
+    render("home/home.php");
 }
 
-function form()
-{
-    echo 'Bienvenue sur la page home';
-}
