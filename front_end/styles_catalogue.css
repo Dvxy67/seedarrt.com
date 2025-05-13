@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500&display=swap');
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: #111;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover {
+    color: #D4AF37; /* Couleur dorée élégante */
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 300px;
+    background-color: #222;
+    background-image: url('/api/placeholder/1400/300');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+
+/* Filter */
+.filter-container {
+    padding: 40px 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
+}
+
+.filter-btn:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #8B4513; /* Marron cuivré remplaçant le vert */
+    transition: width 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    color: #8B4513; /* Marron cuivré remplaçant le vert */
+}
+
+.filter-btn:hover:after, .filter-btn.active:after {
+    width: 100%;
+}
+
+.sort-filter {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sort-select {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+    padding: 5px 0;
+    width: 150px;
+    outline: none;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.view-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.view-btn:hover, .view-btn.active {
+    color: #8B4513; /* Marron cuivré remplaçant le vert */
+}
+
+/* Gallery */
+.gallery {
+    padding: 60px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.art-item {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.art-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.art-image {
+    height: 400px;
+    overflow: hidden;
+}
+
+.art-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.art-item:hover .art-image img {
+    transform: scale(1.05);
+}
+
+.art-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.art-item:hover .art-overlay {
+    opacity: 1;
+}
+
+.overlay-btn {
+    background-color: #fff;
+    color: #111;
+    border: none;
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.overlay-btn:hover {
+    background-color: #8B4513; /* Marron cuivré remplaçant le vert */
+    color: #fff;
+}
+
+.art-info {
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.art-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #111;
+}
+
+.art-category {
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.art-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #8B4513; /* Marron cuivré remplaçant le vert */
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    gap: 5px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 1px solid #ddd;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.page-btn:hover, .page-btn.active {
+    background-color: #8B4513; /* Marron cuivré remplaçant le vert */
+    color: #fff;
+    border-color: #8B4513; /* Marron cuivré remplaçant le vert */
+}
+
+.page-nav {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.page-nav:hover {
+    color: #8B4513; /* Marron cuivré remplaçant le vert */
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 60px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #D4AF37; /* Couleur dorée pour meilleure visibilité sur fond sombre */
+}
+
+.footer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    list-style-type: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #D4AF37; /* Couleur dorée pour meilleure visibilité sur fond sombre */
+}
+
+.footer-contact {
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #D4AF37; /* Couleur dorée pour meilleure visibilité sur fond sombre */
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .filter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+}
