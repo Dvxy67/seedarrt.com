@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription | Seedarrt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles_inscription.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">Seedarrt</div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Accueil</a></li>
+                    <li><a href="a_propo.html">À propos</a></li>
+                    <li><a href="catalogue.html">Catalogue</a></li>
+                    <li><a href="lore.html">Lors</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="overlay"></div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Inscrivez-vous</h1>
+            <p>Rejoignez notre communauté d'art et découvrez des œuvres exclusives</p>
+        </div>
+    </section>
+    
+    <main>
+        <section class="registration-section">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Créer un compte</h2>
+                    <p class="section-subtitle">Inscrivez-vous pour accéder à notre collection complète et bénéficier d'avantages exclusifs</p>
+                </header>
+                
+                <div class="form-container">
+                    <form id="registration-form" action="#" method="post">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstname" class="form-label">Prénom</label>
+                                <input type="text" id="firstname" name="firstname" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastname" class="form-label">Nom</label>
+                                <input type="text" id="lastname" name="lastname" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="email" class="form-label">Adresse email</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password" class="form-label">Mot de passe</label>
+                                <input type="password" id="password" name="password" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirm-password" class="form-label">Confirmer le mot de passe</label>
+                                <input type="password" id="confirm-password" name="confirm-password" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="interests" class="form-label">Centres d'intérêt artistiques</label>
+                                <input type="text" id="interests" name="interests" class="form-input" placeholder="Ex: Peinture à l'huile, Art contemporain, Portraits...">
+                            </div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">J'accepte de recevoir des informations sur les nouvelles œuvres, expositions et événements.</label>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a>.</label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="form-submit">Créer mon compte</button>
+                        </div>
+                    </form>
+                    
+                    <div class="login-link">
+                        Vous avez déjà un compte ? <a href="#">Connectez-vous ici</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Seedarrt</div>
+                    <p class="footer-desc">Créateur d'œuvres d'art exclusives, inspirées par la beauté de la nature et l'émotion humaine. Chaque pièce est une expression unique de passion et de créativité.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Accueil</a></li>
+                        <li><a href="a_propo.html">À propos</a></li>
+                        <li><a href="catalogue.html">Catalogue</a></li>
+                        <li><a href="lore.html">Lors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <p class="footer-contact"><i class="fas fa-map-marker-alt"></i> 123 Rue du Capitalism, 1030 Schaerbeeck</p>
+                    <p class="footer-contact"><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    <p class="footer-contact"><i class="fas fa-envelope"></i> contact@artiste.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2025 Artiste Seedarrt. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form validation
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                alert('Les mots de passe ne correspondent pas. Veuillez réessayer.');
+                return false;
+            }
+            
+            // Here you would typically send the form data to your server
+            alert('Inscription réussie ! Bienvenue chez Seedarrt.');
+        });
+    </script>
+</body>
+</html>
