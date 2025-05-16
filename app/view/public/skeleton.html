@@ -1,26 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>%%HEAD_TITLE%%</title>
+    <title>%%HEAD_TITLE%% | Catalogue - Artiste Peintre</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles_catalogue.css">
 </head>
 <body>
     <header>
-        <h1>Skeleton</h1>
-        <nav>
-            <ul>
-                <li><a href="/public/index.html">Home</a></li>
-                <li><a href="/public/about.html">About</a></li>
-                <li><a href="/public/contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container header-container">
+            <div class="logo">Seedarrt</div>
+            <nav>
+                <ul>
+                    <li><a href="/home">Accueil</a></li>
+                    <li><a href="/a_propo">À propos</a></li>
+                    <li><a href="/catalogue">Catalogue</a></li>
+                    <li><a href="/lore">Lors</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
         %%MAIN_CONTENT%%
     </main>
+    
     <footer>
-        <p>Mon footer</p>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Artiste</div>
+                    <p class="footer-desc">Créateur d'œuvres d'art exclusives, inspirées par la beauté de la nature et l'émotion humaine. Chaque pièce est une expression unique de passion et de créativité.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Liens rapides</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Catalogue</a></li>
+                        <li><a href="#">Lors</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <p class="footer-contact"><i class="fas fa-map-marker-alt"></i> 123 Rue du Capitalism, 1030 Schaerbeeck</p>
+                    <p class="footer-contact"><i class="fas fa-phone"></i> +33 1 23 45 67 89</p>
+                    <p class="footer-contact"><i class="fas fa-envelope"></i> contact@artiste.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2025 Artiste Seedarrt. Tous droits réservés.
+            </div>
+        </div>
     </footer>
 </body>
 </html>

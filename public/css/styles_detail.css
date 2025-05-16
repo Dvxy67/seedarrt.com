@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Responsive Navigation */
+header {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #111;
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: #111;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover {
+    color: #D4AF37;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #fff;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        transition: right 0.3s ease;
+        z-index: 999;
+        padding-top: 80px;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 998;
+    }
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Animation pour le menu hamburger */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 20px 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.breadcrumb ul {
+    display: flex;
+    list-style: none;
+}
+
+.breadcrumb li {
+    font-size: 13px;
+    color: #666;
+}
+
+.breadcrumb li:not(:last-child):after {
+    content: '/';
+    margin: 0 10px;
+    color: #999;
+}
+
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #8B4513;
+}
+
+/* Artwork Detail Section */
+.artwork-detail {
+    padding: 80px 0;
+}
+
+.artwork-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.artwork-gallery {
+    position: relative;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    position: relative;
+}
+
+.main-image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #8B4513;
+    top: 10px;
+    left: 10px;
+    z-index: -1;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: all 0.3s;
+}
+
+.thumbnail:hover, .thumbnail.active {
+    border-color: #8B4513;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artwork-info {
+    padding: 0 0 0 20px;
+}
+
+.artwork-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.artwork-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background-color: #8B4513;
+    bottom: 0;
+    left: 0;
+}
+
+.artwork-artist {
+    font-size: 18px;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.artwork-price {
+    font-size: 24px;
+    font-weight: 500;
+    color: #8B4513;
+    margin-bottom: 30px;
+}
+
+.artwork-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #f1f1f1;
+    color: #666;
+    font-size: 12px;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+.tag:hover {
+    background-color: #8B4513;
+    color: #fff;
+}
+
+.artwork-description {
+    margin-bottom: 40px;
+}
+
+.description-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #111;
+}
+
+.description-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #666;
+}
+
+.artwork-details {
+    margin-bottom: 40px;
+}
+
+.details-list {
+    list-style: none;
+}
+
+.details-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.details-list strong {
+    color: #111;
+}
+
+.artwork-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #8B4513;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #D4AF37;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #8B4513;
+    border: 1px solid #8B4513;
+}
+
+.btn-secondary:hover {
+    background-color: #8B4513;
+    color: #fff;
+}
+
+.like-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.like-button i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.like-button:hover, .like-button.active {
+    color: #D4AF37;
+}
+
+.like-button.active i {
+    color: #D4AF37;
+}
+
+/* Related Artworks */
+.related-artworks {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background-color: #8B4513;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.artwork-card {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.artwork-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.artwork-card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.artwork-card-content {
+    padding: 20px;
+}
+
+.artwork-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.artwork-card-artist {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.artwork-card-price {
+    font-weight: 500;
+    color: #8B4513;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 60px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: #ccc;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #D4AF37;
+}
+
+.footer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    list-style-type: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #D4AF37;
+}
+
+.footer-contact {
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: #D4AF37;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    font-size: 12px;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .artwork-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artwork-title {
+        font-size: 28px;
+    }
+
+    .artwork-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+}

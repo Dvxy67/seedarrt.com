@@ -1,6 +1,6 @@
 <?php
-$host = '127.0.0.1';
-$db   = 'test';
+$host = 'localhost';
+$db   = 'seedarrt';
 $user = 'seedarrt';
 $pass = 'seedarrt';
 $charset = 'utf8mb4';

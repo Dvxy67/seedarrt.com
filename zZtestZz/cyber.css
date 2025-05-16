@@ -1,0 +1,348 @@
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: #333;
+    color: #0f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('/api/placeholder/800/600');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+/* Effet caméra */
+.camera-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+}
+
+.camera-corner {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    z-index: 11;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+.camera-label {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    z-index: 12;
+    border: 1px solid #555;
+}
+
+.record-dot {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+    z-index: 12;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #0f0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0f0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Section principale */
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.profile-box {
+    border: 2px solid #0f0;
+    padding: 20px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.profile-header {
+    background-color: #0f0;
+    color: black;
+    padding: 5px 10px;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+}
+
+.profile-content {
+    margin-top: 20px;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    border: 2px solid #0f0;
+    margin-bottom: 20px;
+}
+
+.data-box {
+    border: 2px solid #0088ff;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+
+.data-header {
+    background-color: #0088ff;
+    color: black;
+    padding: 5px 10px;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+}
+
+.data-content {
+    margin-top: 20px;
+    color: #0088ff;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #0088ff;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #222;
+    margin-top: 5px;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #0088ff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.projects-box {
+    border: 2px solid #ff0088;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: relative;
+    grid-column: span 2;
+}
+
+.projects-header {
+    background-color: #ff0088;
+    color: black;
+    padding: 5px 10px;
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+}
+
+.projects-content {
+    margin-top: 20px;
+    color: #ff0088;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    border: 1px solid #ff0088;
+    padding: 15px;
+    position: relative;
+}
+
+.project-id {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #ff0088;
+    color: black;
+    padding: 2px 8px;
+    font-size: 12px;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    border-top: 1px solid #0f0;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.system-status {
+    display: flex;
+    gap: 20px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    color: #999;
+}
+
+.status-on {
+    color: #0f0;
+}
+
+/* Animations et effets */
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    5% { opacity: 0.9; }
+    10% { opacity: 0.8; }
+    15% { opacity: 1; }
+    20% { opacity: 0.9; }
+    25% { opacity: 0.8; }
+    30% { opacity: 0.9; }
+    35% { opacity: 0.8; }
+    40% { opacity: 1; }
+    45% { opacity: 0.9; }
+    50% { opacity: 1; }
+    55% { opacity: 0.9; }
+    60% { opacity: 0.8; }
+    65% { opacity: 0.9; }
+    70% { opacity: 0.8; }
+    75% { opacity: 1; }
+    80% { opacity: 0.9; }
+    85% { opacity: 0.8; }
+    90% { opacity: 0.9; }
+    95% { opacity: 1; }
+    100% { opacity: 0.9; }
+}
+
+.flicker {
+    animation: flicker 5s infinite;
+}
+
+/* Effet glitch occasionnel */
+.glitch {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 255, 0.03);
+    pointer-events: none;
+    z-index: 9;
+    opacity: 0;
+}
+
+@keyframes glitch-effect {
+    0% { opacity: 0; transform: translateX(0); }
+    2% { opacity: 0.3; transform: translateX(-10px); }
+    4% { opacity: 0; transform: translateX(0); }
+    50% { opacity: 0; transform: translateX(0); }
+    52% { opacity: 0.3; transform: translateX(10px); }
+    54% { opacity: 0; transform: translateX(0); }
+    100% { opacity: 0; }
+}
+
+.glitch {
+    animation: glitch-effect 10s infinite;
+}
+
+/* Médias requêtes */
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-box {
+        grid-column: span 1;
+    }
+}

@@ -1,36 +1,4 @@
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Collection d'Œuvres</h1>
-            <p>Explorez notre sélection d'œuvres d'art uniques et exceptionnelles</p>
-        </div>
-    </section>
-    
-    <div class="filter-container">
-        <div class="container filter">
-            <div class="filter-categories">
-                <button class="filter-btn active">Toutes les œuvres</button>
-                <button class="filter-btn">Peintures à l'huile</button>
-                <button class="filter-btn">Acryliques</button>
-                <button class="filter-btn">Aquarelles</button>
-                <button class="filter-btn">Prints</button>
-                <button class="filter-btn">Asset 3D</button>
-            </div>
-            <div class="sort-filter">
-                <select class="sort-select">
-                    <option value="recent">Plus récent</option>
-                    <option value="price-asc">Prix croissant</option>
-                    <option value="price-desc">Prix décroissant</option>
-                    <option value="name">Alphabétique</option>
-                </select>
-                <div class="view-toggle">
-                    <button class="view-btn active"><i class="fas fa-th"></i></button>
-                    <button class="view-btn"><i class="fas fa-list"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <section class="gallery">
+<section class="gallery">
     <div class="container">
         <div class="gallery-grid">
             <?php if(empty($data['items'])): ?>
@@ -82,15 +50,3 @@
         </div>
     </div>
 </section>
-            
-            <div class="pagination">
-                <button class="page-nav"><i class="fas fa-chevron-left"></i></button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">4</button>
-                <button class="page-nav"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-    

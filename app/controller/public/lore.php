@@ -1,6 +1,8 @@
 <?php
 
-function ()
-{
-    echo 'Bienvenue sur la page du LOOOREEEE <3 ';
+function lore(){
+    require('../config/db.php');
+    $stmt = $pdo->query('SELECT * FROM item');
+    $items = $stmt->fetchAll();
+    render('lore/lore.php', ['items'=> $items, 'head_tittle' => 'Catalogue | Seedarrt']);
 }
