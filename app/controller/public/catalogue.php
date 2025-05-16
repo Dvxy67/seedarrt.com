@@ -1,10 +1,18 @@
 
 <?php
 
-function catalogue(){
+function catalogue() {
     require('../config/db.php');
     $stmt = $pdo->query('SELECT * FROM item');
     $items = $stmt->fetchAll();
-    render('catalogue/catalogue.php', ['items'=> $items, 'head_tittle' => 'Catalogue | Seedarrt']);
 
-}
+    // On déclare le CSS spécifique à cette page
+    $pageCss = 'styles_catalogue.css';
+
+    // On passe toutes les données à la vue
+    render('catalogue/catalogue.php', [
+        'items' => $items,
+        'head_tittle' => 'Catalogue | Seedarrt',
+        'pageCss' => $pageCss
+    ]);
+}           
