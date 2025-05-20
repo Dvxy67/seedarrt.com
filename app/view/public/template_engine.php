@@ -1,10 +1,10 @@
 <?php
 
-function render($partial, $data = []): void
+function render($partial, $data = [], $zone = 'public'): void
 {
     // 1. Définir les chemins du squelette et du fichier de contenu partiel (la vue)
-    $skeletonPath = SITE_ROOT . 'app/view/public/skeleton.html';
-    $partialPath = SITE_ROOT . "app/view/public/$partial";
+    $skeletonPath = SITE_ROOT . "app/view/$zone/skeleton.html";
+    $partialPath = SITE_ROOT . "app/view/$zone/$partial";
 
     // 2. Vérifier que les deux fichiers existent bien
     if (!file_exists($skeletonPath) || !file_exists($partialPath)) {

@@ -3,16 +3,18 @@ define('SITE_ROOT', __DIR__.'/../');
 
 require_once(SITE_ROOT.'app/view/public/template_engine.php');
 
-// var_dump($_GET);
-// var_dump($_SERVER["REQUEST_URI"]);
-
 $uri_parts = explode('/', $_SERVER["REQUEST_URI"]);
 array_shift($uri_parts);
 
+$zone = 'public';
+if(!empty($uri_parts[0]) && $uri_parts[0] === 'admin'){
+    $zone = 'admin';
+    array_shift($uri_parts);
+}
+
 if(empty($uri_parts[0])){
     $controller = 'home';
-}
-else{
+} else {
     $controller = $uri_parts[0];
 }
 
@@ -21,10 +23,9 @@ if (empty($uri_parts[1])) {
 } else {
     $action = $uri_parts[1];
 }
+// 🔄 Ici : sélectionne le bon dossier de contrôleur
+$controller_path = SITE_ROOT . "app/controller/$zone/$controller.php";
 
-$controller_path = SITE_ROOT . "app/controller/public/$controller.php";
-
-// var_dump($controller_path);
 $failedToLoad = false;
 
 if (file_exists($controller_path)) {
@@ -40,4 +41,5 @@ if (file_exists($controller_path)) {
 
 if($failedToLoad === true){
     http_response_code(404);
+    echo "Erreur 404 : page non trouvée";
 }

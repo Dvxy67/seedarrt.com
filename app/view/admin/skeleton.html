@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>%%HEAD_TITLE%%</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS dynamique -->
+    <!--CSS_DYNAMIC_HOOK-->
+
+    <!-- CSS commun pour admin -->
+    <link rel="stylesheet" href="/public/css/admin_base.css">
+
+    <!-- Fonts, icons, etc. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter&display=swap">
+</head>
+<body>
+    <header class="admin-header">
+        <h1>Panneau d'administration</h1>
+        <nav>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/logout">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-main">
+        %%MAIN_CONTENT%%
+    </main>
+
+    <footer class="admin-footer">
+        <p>&copy; <?= date('Y') ?> Seedarrt — Interface Admin</p>
+    </footer>
+</body>
+</html>
