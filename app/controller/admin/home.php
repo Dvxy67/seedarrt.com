@@ -1,6 +1,6 @@
     
 <?php
-function dashboard() {
+function home() {
     require('../config/db.php');
 
     // Exemple : récupération de données à afficher dans le dashboard

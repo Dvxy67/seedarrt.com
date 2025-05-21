@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des items - ArtGallery</title>
+    <title>Ajouter un nouvel item - ArtGallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -282,184 +282,119 @@
             font-weight: 600;
         }
 
-        .btn-add {
+        /* Form Styles */
+        .form {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-row {
             display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group.half {
+            flex: 1;
+            position: relative;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            font-size: 0.95rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: rgba(52, 211, 153, 0.5);
+            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.25);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='18px' height='18px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-cancel {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.8rem 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
+        }
+
+        .btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-save {
             background: linear-gradient(95deg, rgba(52, 211, 153, 0.9), rgba(16, 185, 129, 0.9));
             border: none;
             border-radius: 8px;
-            padding: 0.6rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
         }
 
-        .btn-add svg {
-            width: 18px;
-            height: 18px;
-            fill: white;
-            margin-right: 0.5rem;
-        }
-
-        .btn-add:hover {
+        .btn-save:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-        }
-
-        /* Table Styles */
-        .table-container {
-            overflow-x: auto;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .data-table thead tr {
-            background: rgba(0, 53, 27, 0.4);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .data-table th {
-            padding: 1rem;
-            text-align: left;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .data-table tbody tr {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .data-table tbody tr:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .data-table td {
-            padding: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-        }
-
-        .item-thumbnail {
-            width: 80px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .status-badge.available {
-            background: rgba(52, 211, 153, 0.2);
-            color: rgba(52, 211, 153, 1);
-        }
-
-        .status-badge.reserved {
-            background: rgba(252, 211, 77, 0.2);
-            color: rgba(252, 211, 77, 1);
-        }
-
-        .status-badge.sold {
-            background: rgba(239, 68, 68, 0.2);
-            color: rgba(239, 68, 68, 1);
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .action-buttons a {
-            background: none;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-edit {
-            background: rgba(52, 211, 153, 0.1);
-            color: rgba(52, 211, 153, 0.9);
-        }
-
-        .btn-edit:hover {
-            background: rgba(52, 211, 153, 0.2);
-        }
-
-        .btn-delete {
-            background: rgba(239, 68, 68, 0.1);
-            color: rgba(239, 68, 68, 0.9);
-        }
-
-        .btn-delete:hover {
-            background: rgba(239, 68, 68, 0.2);
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            z-index: 100;
-            display: none;
-        }
-
-        .modal-overlay.active {
-            display: block;
-        }
-
-        .modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            width: 90%;
-            max-width: 550px;
-            background: rgba(6, 40, 25, 0.9);
-            backdrop-filter: blur(20px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            z-index: 101;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .modal.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -50%) scale(1);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
         }
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-            .dashboard-stats {
-                grid-template-columns: repeat(2, 1fr);
+            .form-row {
+                flex-direction: column;
+                gap: 0;
             }
         }
 
@@ -502,39 +437,44 @@
             }
         }
 
-        .action-link {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
+        /* File Upload */
+        .file-upload {
+            position: relative;
+        }
+
+        .file-input {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .file-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
             transition: all 0.3s ease;
-            display: inline-block;
-            margin: 0 0.2rem;
-        }
-
-        .action-edit {
-            background: rgba(52, 211, 153, 0.1);
-            color: rgba(52, 211, 153, 1);
-        }
-
-        .action-edit:hover {
-            background: rgba(52, 211, 153, 0.2);
-        }
-
-        .action-delete {
-            background: rgba(239, 68, 68, 0.1);
-            color: rgba(239, 68, 68, 1);
-        }
-
-        .action-delete:hover {
-            background: rgba(239, 68, 68, 0.2);
-        }
-
-        .empty-message {
             color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            padding: 2rem;
-            font-style: italic;
+        }
+
+        .file-label:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(52, 211, 153, 0.4);
+        }
+
+        .file-label svg {
+            width: 20px;
+            height: 20px;
+            fill: rgba(52, 211, 153, 0.9);
         }
     </style>
 </head>
@@ -556,7 +496,7 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="/admin/dashboard"><svg viewBox="0 0 24 24"><path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" /></svg> Dashboard</a></li>
-                <li class="active"><a href="/admin/items"><svg viewBox="0 0 24 24"><path d="M18,17H10.5L12.5,15H18M6,17V15H8.5L6,17M14,13H18V11H14M6,13H12V11H6M18,9H13L14.5,7.5H18M6,9H9.5L11,7.5H6M6,5V3H18V5H6Z" /></svg> Items</a></li>
+                <li class="active"><a href="/admin/item"><svg viewBox="0 0 24 24"><path d="M18,17H10.5L12.5,15H18M6,17V15H8.5L6,17M14,13H18V11H14M6,13H12V11H6M18,9H13L14.5,7.5H18M6,9H9.5L11,7.5H6M6,5V3H18V5H6Z" /></svg> Items</a></li>
                 <li><a href="/admin/tags"><svg viewBox="0 0 24 24"><path d="M21.41,11.58L12.41,2.58C12.04,2.21 11.53,2 11,2H4C2.9,2 2,2.9 2,4V11C2,11.53 2.21,12.04 2.59,12.41L11.59,21.41C11.96,21.78 12.47,22 13,22C13.53,22 14.04,21.79 14.41,21.41L21.41,14.41C21.79,14.04 22,13.53 22,13C22,12.47 21.79,11.96 21.41,11.58M5.5,7C4.67,7 4,6.33 4,5.5C4,4.67 4.67,4 5.5,4C6.33,4 7,4.67 7,5.5C7,6.33 6.33,7 5.5,7Z" /></svg> Tags</a></li>
                 <li><a href="/admin/profile"><svg viewBox="0 0 24 24"><path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" /></svg> Profil</a></li>
             </ul>
@@ -568,21 +508,117 @@
     </aside>
     
     <!-- Main Content -->
-    <main class="main-content">%%MAIN_CONTENT%%
+    <main class="main-content">
+        <header class="dashboard-header">
+            <h2>Ajouter un nouvel item</h2>
+            <div class="user-info">
+                <div class="user-notifications">
+                    <svg viewBox="0 0 24 24"><path d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21" /></svg>
+                    <span class="badge">3</span>
+                </div>
+                <div class="user-avatar">
+                    <img src="/api/placeholder/40/40" alt="Avatar">
+                </div>
+                <span class="user-name">Seedart</span>
+            </div>
+        </header>
+        
+        <!-- CREATE ITEM FORM -->
+        <section class="content-section">
+            <div class="section-header">
+                <h3>Informations de l'item</h3>
+            </div>
+            
+            <form action="/admin/item/store" method="POST" class="form">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label class="form-label">Nom</label>
+                        <input type="text" name="nom" class="form-control" placeholder="Nom de l'item" required>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label class="form-label">Slug</label>
+                        <input type="text" name="slug" class="form-control" placeholder="mon-item-slug" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea name="description" class="form-control" placeholder="Description détaillée de l'item..." rows="4"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label class="form-label">Prix (€)</label>
+                        <input type="number" step="0.01" name="prix" class="form-control" placeholder="0.00" required>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label class="form-label">Prix promo (€)</label>
+                        <input type="number" step="0.01" name="prix_promo" class="form-control" placeholder="0.00">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label class="form-label">Quantité en stock</label>
+                        <input type="number" name="quantite_stock" class="form-control" placeholder="0" required>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label class="form-label">ID de catégorie</label>
+                        <input type="number" name="categorie_id" class="form-control" placeholder="ID de la catégorie">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label class="form-label">Statut</label>
+                        <select name="statut" class="form-control">
+                            <option value="actif">Actif</option>
+                            <option value="inactif">Inactif</option>
+                            <option value="en_promotion">En promotion</option>
+                            <option value="rupture">Rupture</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label class="form-label">Poids (kg)</label>
+                        <input type="number" step="0.001" name="poids" class="form-control" placeholder="0.000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Image (URL ou chemin relatif)</label>
+                    <input type="text" name="image_url" class="form-control" placeholder="chemin/vers/image.jpg">
+                </div>
+                
+                <div class="form-buttons">
+                    <a href="/admin/item" class="btn-cancel">Annuler</a>
+                    <button type="submit" class="btn-save">Enregistrer</button>
+                </div>
+            </form>
+        </section>
     </main>
     
     <script>
         // JavaScript pour interactions
         document.addEventListener('DOMContentLoaded', function() {
-            // Gestion des liens actifs dans la navigation
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.main-nav li a');
+            // Auto-génération du slug à partir du nom
+            const nomInput = document.querySelector('input[name="nom"]');
+            const slugInput = document.querySelector('input[name="slug"]');
             
-            navLinks.forEach(link => {
-                if (currentPath.includes(link.getAttribute('href'))) {
-                    link.parentElement.classList.add('active');
-                }
-            });
+            if (nomInput && slugInput) {
+                nomInput.addEventListener('input', function() {
+                    // Transformation simple du nom en slug
+                    let slug = this.value.toLowerCase()
+                        .replace(/[^\w\s-]/g, '') // Supprime les caractères spéciaux
+                        .replace(/[\s_-]+/g, '-') // Remplace espaces et underscores par des tirets
+                        .replace(/^-+|-+$/g, ''); // Enlève les tirets au début et à la fin
+                    
+                    slugInput.value = slug;
+                });
+            }
         });
     </script>
 </body>
