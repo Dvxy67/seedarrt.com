@@ -5,7 +5,9 @@
 │   │   ├── admin
 │   │   │   ├── home.php
 │   │   │   ├── item.php
-│   │   │   └── login.php
+│   │   │   ├── login.php
+│   │   │   ├── tag.php
+│   │   │   └── user.php
 │   │   └── public
 │   │       ├── a_propo.php
 │   │       ├── catalogue.php
@@ -13,7 +15,8 @@
 │   │       ├── home.php
 │   │       └── lore.php
 │   ├── model
-│   │   └── item.php
+│   │   ├── item.php
+│   │   └── tag.php
 │   └── view
 │       ├── admin
 │       │   ├── dashboard.php
@@ -21,7 +24,15 @@
 │       │   │   ├── create.php
 │       │   │   ├── edit.php
 │       │   │   └── index.php
-│       │   └── skeleton.html
+│       │   ├── skeleton.html
+│       │   ├── tag
+│       │   │   ├── create.php
+│       │   │   ├── edit.php
+│       │   │   └── index.php
+│       │   └── user
+│       │       ├── create.php
+│       │       ├── delete.php
+│       │       └── index.php
 │       └── public
 │           ├── a_propo
 │           │   └── a_propo.php
@@ -58,7 +69,8 @@
 │   │   ├── styles_detail.css
 │   │   ├── styles_home.css
 │   │   ├── styles_inscription.css
-│   │   └── styles_lors.css
+│   │   ├── styles_lors.css
+│   │   └── styles_skeleton_admin.css
 │   ├── index.php
 │   ├── js
 │   │   └── scripte_home.js
@@ -69,4 +81,4 @@
 │   └── tag.sql
 └── structure.txt
 
-23 directories, 47 files
+25 directories, 57 files

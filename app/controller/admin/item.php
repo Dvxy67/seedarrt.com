@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../../model/item.php';
-require_once __DIR__ . '/../../../config/db.php';
 
 
     // =============================
@@ -12,7 +11,8 @@ require_once __DIR__ . '/../../../config/db.php';
 
     // =============================
     function create() {
-        render('item/create.php', [], 'admin');
+        $pageCss = 'styles_item_create.css';
+        render('item/create.php', ['pageCss' => $pageCss], 'admin');
 
     }
 
@@ -39,7 +39,7 @@ require_once __DIR__ . '/../../../config/db.php';
     // =============================
     function edit($id) {
         $item = item_getById($id);
-        require __DIR__ . '/../../../view/admin/item/edit.php';
+        render('item/edit.php', [], 'admin');
     }
 
     // =============================

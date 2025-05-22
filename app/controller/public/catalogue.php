@@ -2,8 +2,7 @@
 <?php
 
 function catalogue() {
-    require('../config/db.php');
-    $stmt = $pdo->query('SELECT * FROM item');
+    $stmt = db()->query('SELECT * FROM item');
     $items = $stmt->fetchAll();
 
     // On déclare le CSS spécifique à cette page

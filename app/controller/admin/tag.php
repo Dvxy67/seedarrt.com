@@ -1,69 +1,51 @@
 <?php
 
 require_once __DIR__ . '/../../model/tag.php';
-require_once __DIR__ . '/../../../config/db.php';
 
+// =============================
+function tag() {
+    $tags = model_tag_getAll(); // Changé de tag_getAll() à model_tag_getAll()
+    render('tag/index.php', ['tags' => $tags], 'admin');
+}
 
-    // =============================
-    function tag() {
-        $items = $this->model->getAll();
-        require __DIR__ . '/../../../view/admin/tag/tag.php';
-    }
+// =============================
+function tag_createForm() {
+    render('tag/create.php', [], 'admin');
+}
 
-    // =============================
-    function create() {
-        require __DIR__ . '/../../../view/admin/tag/create.php';
-    }
+// =============================
+function tag_store() {
+    $data = [
+        'slug' => $_POST['slug'],
+        'nom' => $_POST['nom']
+    ];
 
-    // =============================
-    function store() {
-        $data = [
-            'slug' => $_POST['slug'],
-            'nom' => $_POST['nom'],
-            'description' => $_POST['description'],
-            'prix' => $_POST['prix'],
-            'prix_promo' => $_POST['prix_promo'] !== '' ? $_POST['prix_promo'] : null,
-            'quantite_stock' => $_POST['quantite_stock'],
-            'categorie_id' => $_POST['categorie_id'],
-            'image_url' => $_POST['image_url'],
-            'statut' => $_POST['statut'],
-            'poids' => $_POST['poids']
-        ];
+    model_tag_create($data); // Changé de tag_create() à model_tag_create()
+    header('Location: /admin/tag');
+    exit;
+}
 
-        $this->model->create($data);
-        header('Location: /admin/tag');
-        exit;
-    }
+// =============================
+function tag_edit($id) {
+    $tag = model_tag_getById($id); // Changé de tag_getById() à model_tag_getById()
+    require __DIR__ . '/../../../view/admin/tag/edit.php';
+}
 
-    // =============================
-    function edit($id) {
-        $item = $this->model->getById($id);
-        require __DIR__ . '/../../../view/admin/tag/edit.php';
-    }
+// =============================
+function tag_update($id) {
+    $data = [
+        'slug' => $_POST['slug'],
+        'nom' => $_POST['nom']
+    ];
 
-    // =============================
-    function update($id) {
-        $data = [
-            'slug' => $_POST['slug'],
-            'nom' => $_POST['nom'],
-            'description' => $_POST['description'],
-            'prix' => $_POST['prix'],
-            'prix_promo' => $_POST['prix_promo'],
-            'quantite_stock' => $_POST['quantite_stock'],
-            'categorie_id' => $_POST['categorie_id'],
-            'image_url' => $_POST['image_url'],
-            'statut' => $_POST['statut'],
-            'poids' => $_POST['poids']
-        ];
+    model_tag_update($id, $data); // Changé de tag_update() à model_tag_update()
+    header('Location: /admin/tag');
+    exit;
+}
 
-        $this->model->update($id, $data);
-        header('Location: /admin/tag');
-        exit;
-    }
-
-    // =============================
-    function delete($id) {
-        $this->model->delete($id);
-        header('Location: /admin/tag');
-        exit;
-    }
+// =============================
+function tag_delete($id) {
+    model_tag_delete($id); // Changé de tag_delete() à model_tag_delete()
+    header('Location: /admin/tag');
+    exit;
+}

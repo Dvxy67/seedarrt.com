@@ -12,8 +12,7 @@ function form(){
 }
 
 function contact(){
-    require('../config/db.php');
-    $stmt = $pdo->query('SELECT * FROM item');
+    $stmt = db()->query('SELECT * FROM item');
     $items = $stmt->fetchAll();
     $pageCss = 'styles_contact.css';
     render('contact/contact.php', ['items'=> $items, 'head_tittle' => 'Catalogue | Seedarrt','pageCss' => $pageCss]);
