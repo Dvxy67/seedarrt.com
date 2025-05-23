@@ -69,8 +69,8 @@
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <a href="/admin/item/edit?id=<?= $item['id_item'] ?>" class="action-link action-edit">✏️ Modifier</a>
-                                    <a href="/admin/item/delete?id=<?= $item['id_item'] ?>" onclick="return confirm('Supprimer cet item ?');" class="action-link action-delete">🗑️ Supprimer</a>
+                                    <a href="/admin/item/edit/<?= $item['id_item'] ?>" class="action-link action-edit">✏️ Modifier</a>
+                                    <a href="/admin/item/delete/<?= $item['id_item'] ?>" onclick="return confirm('Supprimer cet item ?');" class="action-link action-delete">🗑️ Supprimer</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

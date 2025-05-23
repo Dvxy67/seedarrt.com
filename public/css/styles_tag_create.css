@@ -1,0 +1,272 @@
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    position: relative;
+    z-index: 10;
+    padding: 2rem 2.5rem;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-notifications {
+    position: relative;
+    margin-right: 1.5rem;
+}
+
+.user-notifications svg {
+    width: 24px;
+    height: 24px;
+    fill: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-notifications svg:hover {
+    fill: rgba(52, 211, 153, 1);
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+    background: rgba(52, 211, 153, 1);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    border: 2px solid rgba(52, 211, 153, 0.7);
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-name {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Content Sections */
+.content-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Form Styles */
+.form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group.half {
+    flex: 1;
+    position: relative;
+}
+
+.form-control {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: rgba(52, 211, 153, 0.5);
+    box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.25);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='18px' height='18px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-cancel {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-save {
+    background: linear-gradient(95deg, rgba(52, 211, 153, 0.9), rgba(16, 185, 129, 0.9));
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+}
+
+/* Color Picker Styles */
+.color-picker-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.color-preview {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-preview:hover {
+    border-color: rgba(52, 211, 153, 0.5);
+}
+
+input[type="color"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .user-info {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}

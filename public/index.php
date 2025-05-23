@@ -32,6 +32,11 @@ if (empty($uri_parts[1])) {
     $action = $uri_parts[1];
 }
 
+if (empty($uri_parts[2])) {
+    $slug = null;
+} else {
+    $slug = $uri_parts[2];
+}
 
 // Ici : sélectionne le bon dossier de contrôleur
 $controller_path = SITE_ROOT . "app/controller/$zone/$controller.php";
@@ -40,7 +45,7 @@ $failedToLoad = false;
 if (file_exists($controller_path)) {
     include $controller_path;
     if (function_exists($action)) {
-        call_user_func($action);
+        call_user_func($action, $slug);
     } else {
         $failedToLoad = true;
     }

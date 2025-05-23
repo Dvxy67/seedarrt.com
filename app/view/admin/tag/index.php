@@ -16,7 +16,7 @@
         <section class="content-section" id="tags-section">
             <div class="section-header">
                 <h3>Liste des Tags</h3>
-                <a href="/admin/tag/create" class="btn-add">
+                <a href="/admin/tag/tag_createForm" class="btn-add">
                     <svg viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
                     Ajouter un tag
                 </a>

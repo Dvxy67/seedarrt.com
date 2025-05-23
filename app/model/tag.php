@@ -21,11 +21,15 @@ function model_tag_getById($id)
 // Crée un nouveau tag
 function model_tag_create($data)
 {
-    $sql = "INSERT INTO tag (slug, nom) VALUES (?, ?)";
+    $sql = "INSERT INTO tag (nom, slug, description, couleur, parent_tag_id, visible) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = db()->prepare($sql);
     return $stmt->execute([
+        $data['nom'],
         $data['slug'],
-        $data['nom']
+        $data['description'] ?? null,
+        $data['couleur'] ?? '#333333',
+        !empty($data['parent_tag_id']) ? $data['parent_tag_id'] : null,
+        $data['visible'] ?? 1
     ]);
 }
 
@@ -35,8 +39,12 @@ function model_tag_update($id, $data)
     $sql = "UPDATE tag SET slug = ?, nom = ? WHERE id_tag = ?";
     $stmt = db()->prepare($sql);
     return $stmt->execute([
-        $data['slug'],
         $data['nom'],
+        $data['slug'],
+        $data['description'] ?? null,
+        $data['couleur'] ?? '#333333',
+        !empty($data['parent_tag_id']) ? $data['parent_tag_id'] : null,
+        $data['visible'] ?? 1,
         $id
     ]);
 }
