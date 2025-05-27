@@ -38,8 +38,9 @@ require_once __DIR__ . '/../../model/item.php';
 
     // =============================
     function edit($id) {
-        $item = item_getById($id);
-        render('item/edit.php', [], 'admin');
+        $items = item_getById($id);
+        $pageCss = 'styles_item_create.css';
+        render('item/edit.php', ['items' => $items, 'pageCss' => $pageCss], 'admin');
     }
 
     // =============================

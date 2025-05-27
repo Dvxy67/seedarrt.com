@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../../model/tag.php';
+require_once __DIR__ . '/../../model/item.php';
 
 // =============================
 function tag() {
@@ -9,9 +10,9 @@ function tag() {
 }
 
 // =============================
-function tag_createForm() {
+function create() {
     $pageCss = 'styles_tag_create.css';
-    render('tag/create.php', ['pageCss' => $pageCss], 'admin');
+    render('tag/alter.php', ['pageCss' => $pageCss], 'admin');
 }
 
 // =============================
@@ -31,8 +32,10 @@ function tag_store() {
 
 
 // =============================
-function tag_edit($id) {
+function edit($id) {
     $tag = model_tag_getById($id); 
+    $pageCss = 'styles_tag_create.css';
+    render('tag/alter.php', ['pageCss' => $pageCss, 'tag' => $tag], 'admin');
 }
 
 // =============================
@@ -55,22 +58,22 @@ function tag_delete($id) {
 }
 
 // ALIAS (me permet de télécommande fonctions) ou de délégué.
-function create() {
-    tag_createForm();
-}
+// function create() {
+//     tag_createForm();
+// }
 
-function store() {
-    tag_store();
-}
+// function store() {
+//     tag_store();
+// }
 
-function edit($id) {
-    tag_edit($id);
-}
+// function edit($id) {
+//     tag_edit($id);
+// }
 
-function update() {
-    tag_update();
-}
+// function update() {
+//     tag_update();
+// }
 
-function delete($id) {
-    tag_delete($id);
-}
+// function delete($id) {
+//     tag_delete($id);
+// }

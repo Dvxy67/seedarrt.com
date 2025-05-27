@@ -24,12 +24,12 @@
             <div class="form-row">
                 <div class="form-group half">
                     <label class="form-label">Nom</label>
-                    <input type="text" name="nom" class="form-control" placeholder="Nom du tag" required>
+                    <input type="text" name="nom" class="form-control" placeholder="Nom du tag" required value="<?= $data['tag']['nom'] ?? '';?>">
                 </div>
                 
                 <div class="form-group half">
                     <label class="form-label">Slug</label>
-                    <input type="text" name="slug" class="form-control" placeholder="mon-tag-slug" required>
+                    <input type="text" name="slug" class="form-control" placeholder="mon-tag-slug" required value="<?= $tag['nom'] ?? '';?>">
                 </div>
             </div>
             

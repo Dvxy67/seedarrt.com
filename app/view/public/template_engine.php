@@ -13,6 +13,8 @@ function render($partial, $data = [], $zone = 'public'): void
         return;
     }
 
+    extract($data);
+
     // 3. Charger le squelette HTML comme une chaîne de texte
     $skeleton = file_get_contents($skeletonPath);
 

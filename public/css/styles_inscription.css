@@ -147,16 +147,16 @@ nav ul li a:hover:after {
         opacity: 1;
         visibility: visible;
     }
-    
+
     /* Animation pour le menu hamburger */
     .hamburger-menu.active span:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
-    
+
     .hamburger-menu.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .hamburger-menu.active span:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
@@ -478,7 +478,7 @@ footer {
     .form-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .form-group.full-width {
         grid-column: span 1;
     }
@@ -494,7 +494,7 @@ footer {
     nav ul li {
         margin-left: 20px;
     }
-    
+
     .hero h1 {
         font-size: 42px;
     }

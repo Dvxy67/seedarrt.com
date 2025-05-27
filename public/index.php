@@ -1,4 +1,5 @@
 <?php
+session_start();
 define('SITE_ROOT', __DIR__ . '/../');
 require_once(SITE_ROOT . 'app/view/public/template_engine.php');
 require_once(SITE_ROOT . 'config/db.php');
