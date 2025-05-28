@@ -65,3 +65,12 @@ function item_delete($id)
     $stmt = db()->prepare($sql);
     return $stmt->execute([$id]);
 }
+
+// Récupère un item par son slug
+function item_getBySlug($slug)
+{
+    $sql = "SELECT * FROM item WHERE slug = ?";
+    $stmt = db()->prepare($sql);
+    $stmt->execute([$slug]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
