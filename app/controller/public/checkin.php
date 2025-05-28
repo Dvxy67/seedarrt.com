@@ -9,7 +9,7 @@ function checkin(){
         $stmt->execute([$_POST['username']]);
         $operateur = $stmt->fetch();
         if (!$operateur || $operateur['mot_de_passe'] !== $_POST['mot_de_passe']) {
-            render('login/login.php', ['error' => 'Essaie encore Mon vladimir ou sinon Byyyyyyeeee Pétasse ', 'pageCss' => $pageCss]);
+            render('login/login.php', ['error' => 'Essaie encore ou sinon Byyyyyyeeee Pétasse ', 'pageCss' => $pageCss]);
         } else {
             $_SESSION['active_user'] = $operateur['id_operateur'];
             header('Location: /admin');

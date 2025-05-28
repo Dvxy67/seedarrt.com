@@ -14,12 +14,12 @@ if($data['error'] ?? false){
             
             <form action="/checkin" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Votre identifiant">
+                    <input type="text" class="form-control" name="username">
                     <span class="form-label">Identifiant</span>
                 </div>
                 
                 <div class="form-group">
-                    <input type="password" class="form-control" name="mot_de_passe" placeholder="Votre mot de passe">
+                    <input type="password" class="form-control" name="mot_de_passe">
                     <span class="form-label">Mot de passe</span>
                 </div>
                 
