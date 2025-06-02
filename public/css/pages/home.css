@@ -1,0 +1,182 @@
+/* Hero Section spécifique à la page d'accueil */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: var(--white);
+    padding: var(--container-padding);
+}
+
+.hero figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('/api/placeholder/1600/800');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero figure::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hero-overlay);
+}
+
+.hero h2 {
+    font-family: var(--font-secondary);
+    font-size: 60px;
+    font-weight: var(--font-weight-normal);
+    margin-bottom: var(--gap-large);
+    letter-spacing: var(--letter-spacing-large);
+    position: relative;
+    z-index: 2;
+}
+
+.hero p {
+    font-size: var(--font-size-large);
+    max-width: 600px;
+    margin: 0 auto var(--gap-xxl);
+    letter-spacing: var(--letter-spacing-small);
+    font-weight: var(--font-weight-light);
+    position: relative;
+    z-index: 2;
+}
+
+/* Section artiste spécifique à la page d'accueil */
+section[aria-labelledby="artist-intro"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+}
+
+section[aria-labelledby="artist-intro"] figure {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: var(--gap-xl);
+}
+
+section[aria-labelledby="artist-intro"] img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section[aria-labelledby="artist-intro"] p {
+    max-width: 800px;
+    margin-bottom: var(--gap-xl);
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+section[aria-labelledby="artist-intro"] a {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-semibold);
+    position: relative;
+}
+
+section[aria-labelledby="artist-intro"] a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-fast);
+}
+
+section[aria-labelledby="artist-intro"] a:hover::after {
+    width: 100%;
+}
+
+/* Section témoignages */
+section[aria-labelledby="testimonials"] {
+    background-color: #f5f5f2;
+}
+
+blockquote {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--gap-xl);
+    background-color: var(--white);
+    box-shadow: var(--shadow-medium);
+}
+
+blockquote p {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xxl);
+    font-style: italic;
+    margin-bottom: var(--gap-large);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+blockquote footer cite {
+    font-style: normal;
+    font-size: var(--font-size-normal);
+    color: var(--text-muted);
+}
+
+/* Section contact CTA */
+section[aria-labelledby="contact-intro"] {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+section[aria-labelledby="contact-intro"] h2 {
+    color: var(--white);
+}
+
+section[aria-labelledby="contact-intro"] h2::after {
+    background-color: var(--secondary-color);
+}
+
+section[aria-labelledby="contact-intro"] p {
+    max-width: 600px;
+    margin: 0 auto var(--gap-xxl);
+    font-size: var(--font-size-medium);
+    color: var(--text-very-light);
+}
+
+/* Responsive pour la page d'accueil */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 40px;
+    }
+    
+    .hero p {
+        font-size: var(--font-size-medium);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 70vh;
+    }
+    
+    .hero h2 {
+        font-size: 32px;
+    }
+    
+    blockquote {
+        padding: var(--gap-large);
+    }
+    
+    blockquote p {
+        font-size: var(--font-size-large);
+    }
+}

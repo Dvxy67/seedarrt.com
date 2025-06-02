@@ -1,0 +1,61 @@
+/* Sélecteurs et inputs */
+.sort-select {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    color: var(--text-light);
+    padding: 5px 0;
+    width: 150px;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.sort-select:focus {
+    border-bottom-color: var(--primary-color);
+}
+
+/* Styles de base pour les formulaires */
+.form-group {
+    margin-bottom: var(--gap-large);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--gap-small);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-dark);
+}
+
+.form-input, 
+.form-textarea, 
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-normal);
+    color: var(--text-color);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus, 
+.form-textarea:focus, 
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-error {
+    color: #e74c3c;
+    font-size: var(--font-size-small);
+    margin-top: var(--gap-small);
+}

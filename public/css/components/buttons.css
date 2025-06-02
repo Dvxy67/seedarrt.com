@@ -1,0 +1,127 @@
+/* Boutons de base */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 30px;
+    display: inline-block;
+    font-size: var(--font-size-normal);
+    letter-spacing: var(--letter-spacing-small);
+    text-transform: uppercase;
+    transition: all var(--transition-fast);
+    border: none;
+    cursor: pointer;
+    font-weight: var(--font-weight-medium);
+}
+
+.btn:hover {
+    background-color: var(--text-dark);
+}
+
+/* Boutons de filtre */
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--letter-spacing-small);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    padding: 5px 0;
+    position: relative;
+}
+
+.filter-btn:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width var(--transition-fast);
+}
+
+.filter-btn:hover, 
+.filter-btn.active {
+    color: var(--primary-color);
+}
+
+.filter-btn:hover:after, 
+.filter-btn.active:after {
+    width: 100%;
+}
+
+/* Boutons de vue */
+.view-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.view-btn:hover, 
+.view-btn.active {
+    color: var(--primary-color);
+}
+
+/* Boutons overlay */
+.overlay-btn {
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 25px;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: var(--letter-spacing-small);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.overlay-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Boutons de pagination */
+.page-btn {
+    width: var(--button-height);
+    height: var(--button-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 1px solid #ddd;
+    color: var(--text-light);
+    font-size: var(--font-size-normal);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.page-btn:hover, 
+.page-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.page-nav {
+    width: var(--button-height);
+    height: var(--button-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.page-nav:hover {
+    color: var(--primary-color);
+}

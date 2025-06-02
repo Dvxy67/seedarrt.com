@@ -1,0 +1,86 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500&display=swap');
+
+/* Base styles */
+@import 'base/variables.css';
+@import 'base/reset.css';
+
+/* Layout */
+@import 'layout/grid.css';
+@import 'layout/header.css';
+@import 'layout/footer.css';
+
+/* Components */
+@import 'components/buttons.css';
+@import 'components/forms.css';
+@import 'components/gallery.css';
+
+/* Styles globaux supplémentaires */
+main {
+    margin-top: 100px; /* Compense la hauteur du header fixe */
+}
+
+/* Styles de sections de base */
+section {
+    padding: var(--section-padding-large) var(--gap-xxl);
+    text-align: center;
+}
+
+section h2 {
+    font-family: var(--font-secondary);
+    font-size: 36px;
+    font-weight: var(--font-weight-normal);
+    margin-bottom: var(--gap-xl);
+    color: var(--text-dark);
+    letter-spacing: var(--letter-spacing-medium);
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Classes utilitaires */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-small {
+    margin-bottom: var(--gap-normal);
+}
+
+.mb-medium {
+    margin-bottom: var(--gap-large);
+}
+
+.mb-large {
+    margin-bottom: var(--gap-xl);
+}
+
+.mt-small {
+    margin-top: var(--gap-normal);
+}
+
+.mt-medium {
+    margin-top: var(--gap-large);
+}
+
+.mt-large {
+    margin-top: var(--gap-xl);
+}

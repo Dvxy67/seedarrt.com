@@ -1,0 +1,84 @@
+:root {
+    /* Couleurs principales */
+    --primary-color: #8B4513;     /* Marron cuivré */
+    --secondary-color: #D4AF37;   /* Couleur dorée */
+    --accent-color: #222;         /* Couleur sombre pour les backgrounds */
+    
+    /* Couleurs de texte */
+    --text-color: #333;
+    --text-dark: #111;
+    --text-light: #666;
+    --text-muted: #888;
+    --text-very-light: #ccc;
+    --text-lightest: #999;
+    
+    /* Couleurs de fond */
+    --background-color: #f9f9f7;
+    --white: #fff;
+    --black: #111;
+    
+    /* Couleurs de bordure et ombres */
+    --border-color: rgba(0, 0, 0, 0.1);
+    --border-light: rgba(0, 0, 0, 0.05);
+    --border-footer: rgba(255, 255, 255, 0.1);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.02);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-strong: 0 15px 30px rgba(0, 0, 0, 0.1);
+    --overlay-color: rgba(0, 0, 0, 0.3);
+    --hero-overlay: rgba(0, 0, 0, 0.4);
+    
+    /* Typographie */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Cormorant Garamond', serif;
+    
+    /* Tailles de police */
+    --font-size-small: 12px;
+    --font-size-normal: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+    --font-size-xl: 20px;
+    --font-size-xxl: 22px;
+    --font-size-hero-small: 28px;
+    --font-size-logo: 32px;
+    --font-size-hero: 54px;
+    
+    /* Poids de police */
+    --font-weight-light: 200;
+    --font-weight-normal: 300;
+    --font-weight-medium: 400;
+    --font-weight-semibold: 500;
+    
+    /* Espacements */
+    --container-max-width: 1400px;
+    --container-padding: 0 20px;
+    --section-padding: 60px 0;
+    --section-padding-large: 80px 0;
+    --header-padding: 30px 0;
+    --footer-padding: 60px 0;
+    
+    /* Spacing pour les gaps */
+    --gap-small: 5px;
+    --gap-normal: 10px;
+    --gap-medium: 15px;
+    --gap-large: 20px;
+    --gap-xl: 30px;
+    --gap-xxl: 40px;
+    
+    /* Hauteurs */
+    --hero-height: 300px;
+    --art-image-height: 400px;
+    --button-height: 40px;
+    
+    /* Transitions */
+    --transition-fast: 0.3s;
+    --transition-medium: 0.5s;
+    
+    /* Border radius */
+    --border-radius-small: 3px;
+    --border-radius-medium: 5px;
+    
+    /* Letter spacing */
+    --letter-spacing-small: 1px;
+    --letter-spacing-medium: 2px;
+    --letter-spacing-large: 3px;
+}

@@ -1,0 +1,117 @@
+/* Hero Section spécifique au catalogue */
+.hero {
+    height: var(--hero-height);
+    background-color: var(--accent-color);
+    background-image: url('/api/placeholder/1400/300');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hero-overlay);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-normal);
+    margin-bottom: var(--gap-large);
+    letter-spacing: var(--letter-spacing-medium);
+}
+
+.hero p {
+    font-size: var(--font-size-medium);
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: var(--letter-spacing-small);
+    font-weight: var(--font-weight-light);
+}
+
+/* Filter Container */
+.filter-container {
+    padding: var(--gap-xxl) 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-large);
+}
+
+.sort-filter {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-large);
+}
+
+.view-toggle {
+    display: flex;
+    gap: var(--gap-normal);
+}
+
+/* Pagination spécifique au catalogue */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--section-padding);
+    gap: var(--gap-small);
+}
+
+/* Responsive spécifique au catalogue */
+@media (max-width: 768px) {
+    .filter {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--gap-large);
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: var(--font-size-normal);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 250px;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .filter-categories {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--gap-medium);
+    }
+}

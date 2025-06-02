@@ -1,0 +1,107 @@
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: var(--footer-padding);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-xxl);
+}
+
+.footer-logo {
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-hero-small);
+    letter-spacing: var(--letter-spacing-medium);
+    margin-bottom: var(--gap-large);
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.footer-desc {
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    color: var(--text-very-light);
+    margin-bottom: var(--gap-large);
+    line-height: 1.8;
+}
+
+.social-icons {
+    display: flex;
+    gap: var(--gap-medium);
+}
+
+.social-icon {
+    color: var(--white);
+    font-size: var(--font-size-large);
+    transition: color var(--transition-fast);
+}
+
+.social-icon:hover {
+    color: var(--secondary-color);
+}
+
+.footer-title {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 25px;
+    letter-spacing: var(--letter-spacing-small);
+    text-transform: uppercase;
+}
+
+.footer-links {
+    list-style-type: none;
+}
+
+.footer-links li {
+    margin-bottom: var(--gap-normal);
+}
+
+.footer-links a {
+    color: var(--text-very-light);
+    text-decoration: none;
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-contact {
+    color: var(--text-very-light);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    margin-bottom: var(--gap-medium);
+}
+
+.footer-contact i {
+    margin-right: var(--gap-normal);
+    color: var(--secondary-color);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: var(--gap-xxl);
+    border-top: 1px solid var(--border-footer);
+    margin-top: var(--gap-xxl);
+    font-size: var(--font-size-small);
+    color: var(--text-lightest);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
