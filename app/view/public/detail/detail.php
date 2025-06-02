@@ -14,7 +14,7 @@
             <div class="artwork-gallery">
                 <div class="main-image">
                     <img id="mainImage"
-                         src="<?= $item['image_url'] ?: '/api/placeholder/600/600' ?>"
+                         src="/uploads/item/<?= $item['slug']?>/<?= $item['image_url'] ?: '/api/placeholder/600/600' ?>"
                          alt="<?= htmlspecialchars($item['nom']) ?>">
                 </div>
                 <div class="thumbnail-container">

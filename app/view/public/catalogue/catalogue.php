@@ -40,13 +40,13 @@
                     <div class="art-item">
                         <div class="art-image">
                             <?php if(!empty($item['image_url'])): ?>
-                                <img src="<?= htmlspecialchars($item['image_url']) ?>" alt="<?= htmlspecialchars($item['nom']) ?>">
+                                <img src="/uploads/item/<?= $item['slug']?>/<?= $item['image_url'];?>" alt="<?= htmlspecialchars($item['nom']) ?>">
                             <?php else: ?>
                                 <img src="/api/placeholder/600/400" alt="<?= htmlspecialchars($item['nom']) ?>">
                             <?php endif; ?>
                         </div>
                         <div class="art-overlay">
-                            <button class="overlay-btn">Voir détails</button>
+                            <a href="/catalogue/detail/<?= $item['slug'];?>" class="overlay-btn">Voir détails</a>
                         </div>
                         <div class="art-info">
                             <h3 class="art-title"><?= htmlspecialchars($item['nom']) ?></h3>
