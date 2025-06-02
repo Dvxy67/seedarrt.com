@@ -1,0 +1,403 @@
+/* Hero Section spécifique à À propos */
+.hero {
+    height: 400px;
+    background-color: var(--accent-color);
+    background-image: url('/api/placeholder/1400/400');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+.expertise-item p {
+    font-size: var(--font-size-normal);
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #ddd;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.timeline-item {
+    padding: var(--gap-normal) var(--gap-xxl);
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: var(--gap-large);
+    height: var(--gap-large);
+    background-color: var(--white);
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    top: var(--gap-large);
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd)::after {
+    right: -13px;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -13px;
+}
+
+.timeline-content {
+    padding: var(--gap-large);
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-year {
+    font-family: var(--font-secondary);
+    font-size: 24px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--primary-color);
+    margin-bottom: var(--gap-normal);
+}
+
+.timeline-title {
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--gap-normal);
+    color: var(--text-dark);
+}
+
+.timeline-desc {
+    font-size: var(--font-size-normal);
+    color: var(--text-light);
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    padding: var(--section-padding-large);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    background-image: url('/api/placeholder/1400/500');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: var(--font-secondary);
+    font-size: 42px;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--gap-large);
+}
+
+.cta-text {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--gap-xxl);
+    font-weight: var(--font-weight-normal);
+}
+
+/* Responsive spécifique à À propos */
+@media (max-width: 1024px) {
+    .about-artist {
+        grid-template-columns: 1fr;
+        gap: var(--gap-xxl);
+    }
+    
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: var(--gap-xxl);
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(odd)::after,
+    .timeline-item:nth-child(even)::after {
+        left: 27px;
+    }
+    
+    .hero h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 576px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+        font-size: 42px;
+    }
+    
+    .philosophy-quote {
+        font-size: 22px;
+        padding: 0 var(--gap-large);
+    }
+    
+    .cta-title {
+        font-size: 32px;
+    }
+}white);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hero-overlay);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-normal);
+    margin-bottom: var(--gap-large);
+    letter-spacing: var(--letter-spacing-medium);
+}
+
+.hero p {
+    font-size: var(--font-size-medium);
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: var(--letter-spacing-small);
+    font-weight: var(--font-weight-light);
+}
+
+/* À propos sections */
+.about-section {
+    padding: var(--section-padding-large);
+}
+
+.about-section.bg-light {
+    background-color: var(--white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: var(--font-secondary);
+    font-size: 40px;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-dark);
+    margin-bottom: var(--gap-medium);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background-color: var(--primary-color);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-subtitle {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-light);
+}
+
+/* About artist */
+.about-artist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.artist-image {
+    position: relative;
+}
+
+.artist-image img {
+    width: 100%;
+    height: auto;
+    box-shadow: var(--shadow-strong);
+}
+
+.artist-image::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--primary-color);
+    top: var(--gap-large);
+    left: var(--gap-large);
+    z-index: -1;
+}
+
+.artist-content h2 {
+    font-family: var(--font-secondary);
+    font-size: 36px;
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--gap-large);
+    color: var(--text-dark);
+}
+
+.artist-content p {
+    margin-bottom: 25px;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-normal);
+    color: #555;
+    line-height: 1.8;
+}
+
+.signature {
+    font-family: var(--font-secondary);
+    font-size: 32px;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-top: var(--gap-large);
+}
+
+/* Philosophy */
+.philosophy-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.philosophy-content p {
+    font-size: var(--font-size-large);
+    line-height: 1.8;
+    margin-bottom: var(--gap-xl);
+    color: var(--text-color);
+}
+
+.philosophy-quote {
+    font-family: var(--font-secondary);
+    font-size: 28px;
+    font-style: italic;
+    color: var(--primary-color);
+    line-height: 1.4;
+    position: relative;
+    padding: 0 var(--gap-xxl);
+    margin: 50px 0;
+}
+
+.philosophy-quote::before, 
+.philosophy-quote::after {
+    content: '"';
+    font-size: 60px;
+    position: absolute;
+    color: rgba(139, 69, 19, 0.2);
+}
+
+.philosophy-quote::before {
+    top: -20px;
+    left: 0;
+}
+
+.philosophy-quote::after {
+    bottom: -40px;
+    right: 0;
+}
+
+/* Expertise */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-xl);
+    margin-top: 50px;
+}
+
+.expertise-item {
+    background-color: var(--white);
+    padding: var(--gap-xxl) var(--gap-xl);
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.expertise-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+.expertise-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: var(--gap-large);
+}
+
+.expertise-item h3 {
+    font-family: var(--font-secondary);
+    font-size: 24px;
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--gap-medium);
+    color: var(--
