@@ -53,10 +53,12 @@
                             
                             <!-- Affichage simplifié de la catégorie -->
                             <div class="art-category">
-                                <?php 
+                                <?php  
                                 if($item['categorie_id'] == 1) echo "Peinture";
                                 elseif($item['categorie_id'] == 2) echo "Print";
                                 elseif($item['categorie_id'] == 3) echo "Asset 3D";
+                                elseif($item['categorie_id'] == 4) echo "Peinture à l'huile";
+                                elseif($item['categorie_id'] == 5) echo "Aquarelle";
                                 else echo "Non catégorisé";
                                 ?>
                             </div>

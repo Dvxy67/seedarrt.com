@@ -14,7 +14,7 @@
             <li>
                 <article>
                     <figure>
-                        <img src="images/oeuvre1.jpg" alt="Description détaillée de l'œuvre 1">
+                        <img src="uploads/item/aurora-nocturne/aurora.jpg" alt="Description détaillée de l'œuvre 1">
                         <figcaption>
                             <h3>Titre de l'œuvre</h3>
                             <p>Technique, dimensions</p>
@@ -25,7 +25,7 @@
             <li>
                 <article>
                     <figure>
-                        <img src="images/oeuvre2.jpg" alt="Description détaillée de l'œuvre 2">
+                        <img src="uploads/item/jardin-oublie/jardin.jpg" alt="Description détaillée de l'œuvre 2">
                         <figcaption>
                             <h3>Titre de l'œuvre</h3>
                             <p>Technique, dimensions</p>
@@ -36,7 +36,7 @@
             <li>
                 <article>
                     <figure>
-                        <img src="images/oeuvre3.jpg" alt="Description détaillée de l'œuvre 3">
+                        <img src="uploads/item/horizons-lointains/horizons.jpg" alt="Description détaillée de l'œuvre 3">
                         <figcaption>
                             <h3>Titre de l'œuvre</h3>
                             <p>Technique, dimensions</p>

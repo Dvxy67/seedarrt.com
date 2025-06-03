@@ -74,7 +74,7 @@ nav ul li a:after {
 }
 
 nav ul li a:hover {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 nav ul li a:hover:after {
@@ -82,12 +82,12 @@ nav ul li a:hover:after {
 }
 
 nav ul li a[aria-current="page"] {
-    color: #8B4513;
+    color: #1B4D4D;
 }
 
 nav ul li a[aria-current="page"]:after {
     width: 100%;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
 }
 
 /* Hero Section */
@@ -157,7 +157,7 @@ nav ul li a[aria-current="page"]:after {
     position: absolute;
     width: 60px;
     height: 2px;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
@@ -196,11 +196,11 @@ nav ul li a[aria-current="page"]:after {
 
 .info-icon {
     font-size: 26px;
-    color: #8B4513;
+    color: #1B4D4D;
     margin-right: 20px;
     width: 50px;
     height: 50px;
-    background-color: rgba(139, 69, 19, 0.1);
+    background-color: rgba(27, 77, 77, 0.1);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -240,7 +240,7 @@ nav ul li a[aria-current="page"]:after {
     font-size: 20px;
     width: 40px;
     height: 40px;
-    background-color: rgba(139, 69, 19, 0.1);
+    background-color: rgba(27, 77, 77, 0.1);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -250,7 +250,7 @@ nav ul li a[aria-current="page"]:after {
 
 .social-icon:hover {
     color: #fff;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
 }
 
 /* Contact Form styles */
@@ -315,13 +315,13 @@ nav ul li a[aria-current="page"]:after {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: #8B4513;
+    border-color: #1B4D4D;
     outline: none;
-    box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.1);
+    box-shadow: 0 0 0 2px rgba(27, 77, 77, 0.1);
 }
 
 .form-group.focused label {
-    color: #8B4513;
+    color: #1B4D4D;
 }
 
 .form-group textarea {
@@ -347,7 +347,7 @@ nav ul li a[aria-current="page"]:after {
 }
 
 .checkbox-group a {
-    color: #8B4513;
+    color: #1B4D4D;
     text-decoration: none;
 }
 
@@ -358,7 +358,7 @@ nav ul li a[aria-current="page"]:after {
 .btn {
     display: inline-block;
     padding: 14px 40px;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -371,9 +371,9 @@ nav ul li a[aria-current="page"]:after {
 }
 
 .btn:hover {
-    background-color: #D4AF37;
+    background-color: #2A7373;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.2);
+    box-shadow: 0 5px 15px rgba(27, 77, 77, 0.2);
 }
 
 .btn-submit {
@@ -463,7 +463,7 @@ nav ul li a[aria-current="page"]:after {
     transform: translateY(-50%);
     font-size: 24px;
     font-weight: 300;
-    color: #8B4513;
+    color: #1B4D4D;
     transition: transform 0.3s;
 }
 
@@ -472,7 +472,7 @@ nav ul li a[aria-current="page"]:after {
 }
 
 .faq-item:hover summary {
-    background-color: rgba(139, 69, 19, 0.05);
+    background-color: rgba(27, 77, 77, 0.05);
 }
 
 .faq-content {
@@ -612,7 +612,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .footer-contact {
@@ -624,7 +624,7 @@ footer {
 
 .footer-contact i {
     margin-right: 10px;
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .copyright {

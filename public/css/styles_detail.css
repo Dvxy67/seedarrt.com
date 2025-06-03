@@ -92,7 +92,7 @@ nav ul li a:after {
 }
 
 nav ul li a:hover {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 nav ul li a:hover:after {
@@ -192,7 +192,7 @@ nav ul li a:hover:after {
 }
 
 .breadcrumb a:hover {
-    color: #8B4513;
+    color: #1B4D4D;
 }
 
 /* Artwork Detail Section */
@@ -226,7 +226,7 @@ nav ul li a:hover:after {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 1px solid #8B4513;
+    border: 1px solid #1B4D4D;
     top: 10px;
     left: 10px;
     z-index: -1;
@@ -255,7 +255,7 @@ nav ul li a:hover:after {
 }
 
 .thumbnail:hover, .thumbnail.active {
-    border-color: #8B4513;
+    border-color: #1B4D4D;
 }
 
 .thumbnail img {
@@ -283,7 +283,7 @@ nav ul li a:hover:after {
     position: absolute;
     width: 60px;
     height: 2px;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     bottom: 0;
     left: 0;
 }
@@ -298,7 +298,7 @@ nav ul li a:hover:after {
 .artwork-price {
     font-size: 24px;
     font-weight: 500;
-    color: #8B4513;
+    color: #1B4D4D;
     margin-bottom: 30px;
 }
 
@@ -320,7 +320,7 @@ nav ul li a:hover:after {
 }
 
 .tag:hover {
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     color: #fff;
 }
 
@@ -380,22 +380,22 @@ nav ul li a:hover:after {
 }
 
 .btn-primary {
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     color: #fff;
 }
 
 .btn-primary:hover {
-    background-color: #D4AF37;
+    background-color: #2A7373;
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: #8B4513;
-    border: 1px solid #8B4513;
+    color: #1B4D4D;
+    border: 1px solid #1B4D4D;
 }
 
 .btn-secondary:hover {
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     color: #fff;
 }
 
@@ -417,11 +417,11 @@ nav ul li a:hover:after {
 }
 
 .like-button:hover, .like-button.active {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .like-button.active i {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 /* Related Artworks */
@@ -450,7 +450,7 @@ nav ul li a:hover:after {
     position: absolute;
     width: 60px;
     height: 2px;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
@@ -499,7 +499,7 @@ nav ul li a:hover:after {
 
 .artwork-card-price {
     font-weight: 500;
-    color: #8B4513;
+    color: #1B4D4D;
 }
 
 /* Footer */
@@ -545,7 +545,7 @@ footer {
 }
 
 .social-icon:hover {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .footer-title {
@@ -574,7 +574,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .footer-contact {
@@ -586,7 +586,7 @@ footer {
 
 .footer-contact i {
     margin-right: 10px;
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .copyright {

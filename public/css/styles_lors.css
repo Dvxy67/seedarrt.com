@@ -74,7 +74,7 @@ nav ul li a:after {
 }
 
 nav ul li a:hover {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 nav ul li a:hover:after {
@@ -156,7 +156,7 @@ nav ul li a:hover:after {
     position: absolute;
     width: 60px;
     height: 2px;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
@@ -188,7 +188,7 @@ nav ul li a:hover:after {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
     font-style: italic;
-    color: #8B4513;
+    color: #1B4D4D;
     line-height: 1.4;
     position: relative;
     padding: 0 40px;
@@ -199,7 +199,7 @@ nav ul li a:hover:after {
     content: '"';
     font-size: 60px;
     position: absolute;
-    color: rgba(139, 69, 19, 0.2);
+    color: rgba(27, 77, 77, 0.2);
 }
 
 .intro-quote::before {
@@ -248,7 +248,7 @@ nav ul li a:hover:after {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 1px solid #8B4513;
+    border: 1px solid #1B4D4D;
     top: 20px;
     left: 20px;
     z-index: -1;
@@ -274,8 +274,8 @@ nav ul li a:hover:after {
     display: inline-block;
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
-    color: #8B4513;
-    border-bottom: 1px solid #8B4513;
+    color: #1B4D4D;
+    border-bottom: 1px solid #1B4D4D;
     margin-bottom: 15px;
     padding-bottom: 5px;
 }
@@ -303,7 +303,7 @@ nav ul li a:hover:after {
 
 .influence-icon {
     font-size: 40px;
-    color: #8B4513;
+    color: #1B4D4D;
     margin-bottom: 20px;
 }
 
@@ -344,7 +344,7 @@ nav ul li a:hover:after {
     position: absolute;
     width: 40px;
     height: 2px;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     bottom: 0;
     left: 0;
 }
@@ -357,7 +357,7 @@ nav ul li a:hover:after {
 
 .technique-icon {
     font-size: 24px;
-    color: #8B4513;
+    color: #1B4D4D;
     margin-right: 20px;
     flex-shrink: 0;
 }
@@ -421,7 +421,7 @@ nav ul li a:hover:after {
 .btn {
     display: inline-block;
     padding: 14px 40px;
-    background-color: #8B4513;
+    background-color: #1B4D4D;
     color: #fff;
     text-decoration: none;
     font-size: 14px;
@@ -433,7 +433,7 @@ nav ul li a:hover:after {
 }
 
 .btn:hover {
-    background-color: #D4AF37;
+    background-color: #2A7373;
 }
 
 /* Footer */
@@ -479,7 +479,7 @@ footer {
 }
 
 .social-icon:hover {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .footer-title {
@@ -508,7 +508,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .footer-contact {
@@ -520,7 +520,7 @@ footer {
 
 .footer-contact i {
     margin-right: 10px;
-    color: #D4AF37;
+    color: #2A7373;
 }
 
 .copyright {

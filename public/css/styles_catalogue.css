@@ -74,7 +74,7 @@ nav ul li a:after {
 }
 
 nav ul li a:hover {
-    color: #D4AF37; /* Couleur dorée élégante */
+    color: #2A7373; 
 }
 
 nav ul li a:hover:after {
@@ -167,12 +167,12 @@ nav ul li a:hover:after {
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #8B4513; /* Marron cuivré remplaçant le vert */
+    background-color: #1B4D4D; 
     transition: width 0.3s;
 }
 
 .filter-btn:hover, .filter-btn.active {
-    color: #8B4513; /* Marron cuivré remplaçant le vert */
+    color: #1B4D4D; 
 }
 
 .filter-btn:hover:after, .filter-btn.active:after {
@@ -212,7 +212,7 @@ nav ul li a:hover:after {
 }
 
 .view-btn:hover, .view-btn.active {
-    color: #8B4513; /* Marron cuivré remplaçant le vert */
+    color: #1B4D4D; 
 }
 
 /* Gallery */
@@ -288,7 +288,7 @@ nav ul li a:hover:after {
 }
 
 .overlay-btn:hover {
-    background-color: #8B4513; /* Marron cuivré remplaçant le vert */
+    background-color: #1B4D4D; 
     color: #fff;
 }
 
@@ -316,7 +316,7 @@ nav ul li a:hover:after {
 .art-price {
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
-    color: #8B4513; /* Marron cuivré remplaçant le vert */
+    color: #1B4D4D; 
 }
 
 /* Pagination */
@@ -343,9 +343,9 @@ nav ul li a:hover:after {
 }
 
 .page-btn:hover, .page-btn.active {
-    background-color: #8B4513; /* Marron cuivré remplaçant le vert */
+    background-color: #1B4D4D; 
     color: #fff;
-    border-color: #8B4513; /* Marron cuivré remplaçant le vert */
+    border-color: #1B4D4D; 
 }
 
 .page-nav {
@@ -362,7 +362,7 @@ nav ul li a:hover:after {
 }
 
 .page-nav:hover {
-    color: #8B4513; /* Marron cuivré remplaçant le vert */
+    color: #1B4D4D; 
 }
 
 /* Footer */
@@ -408,7 +408,7 @@ footer {
 }
 
 .social-icon:hover {
-    color: #D4AF37; /* Couleur dorée pour meilleure visibilité sur fond sombre */
+    color: #2A7373; 
 }
 
 .footer-title {
@@ -437,7 +437,7 @@ footer {
 }
 
 .footer-links a:hover {
-    color: #D4AF37; /* Couleur dorée pour meilleure visibilité sur fond sombre */
+    color: #2A7373; 
 }
 
 .footer-contact {
@@ -449,7 +449,7 @@ footer {
 
 .footer-contact i {
     margin-right: 10px;
-    color: #D4AF37; /* Couleur dorée pour meilleure visibilité sur fond sombre */
+    color: #2A7373; 
 }
 
 .copyright {
