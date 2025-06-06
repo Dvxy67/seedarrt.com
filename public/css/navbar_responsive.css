@@ -141,6 +141,21 @@ body.menu-open {
     overflow: hidden;
 }
 
+/* CORRECTION LOGO - Empêche le soulignement */
+
+   .logo {
+    text-decoration: none !important;
+    position: relative;
+}
+
+.logo::after {
+    display: none !important;
+}
+
+.logo:hover::after {
+    display: none !important;
+}
+
 /* Media Queries spécifiques */
 @media (max-width: 768px) {
     .hamburger-menu {
