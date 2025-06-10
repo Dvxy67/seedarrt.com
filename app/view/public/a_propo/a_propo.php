@@ -10,7 +10,7 @@
             <div class="container">
                 <article class="about-artist">
                     <div class="artist-image">
-                        <img src="/api/placeholder/600/800" alt="Portrait de l'artiste">
+                        <img src="/public/uploads/portrait_seedarrt.PNG" alt="Portrait de l'artiste">
                     </div>
                     <div class="artist-content">
                         <h2>Bienvenue dans mon univers artistique</h2>

@@ -236,7 +236,7 @@ nav ul li a[aria-current="page"]:after {
 }
 
 .social-icon {
-    color: #8B4513;
+    color: #fff;
     font-size: 20px;
     width: 40px;
     height: 40px;
@@ -249,8 +249,7 @@ nav ul li a[aria-current="page"]:after {
 }
 
 .social-icon:hover {
-    color: #fff;
-    background-color: #1B4D4D;
+    color: #2A7373;
 }
 
 /* Contact Form styles */

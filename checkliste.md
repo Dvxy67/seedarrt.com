@@ -15,8 +15,8 @@
 - [x] Table `tags` (catégories et thèmes)
   - [ ] Distinction par `type ENUM('categorie', 'theme', 'libre')` **ou** `parent_id`
 - [ ] Table `items_tags` (relation many-to-many)  
-- [ ] Clés primaires et étrangères définies + contraintes unicites et ON DELETE
-- [ ] Script SQL complet et fonctionnel  
+- [x] Clés primaires et étrangères définies + contraintes unicites et ON DELETE
+- [x] Script SQL complet et fonctionnel  
 - [x] Connexion PDO centralisée et memoizee
 
 ## Frontend & Code
@@ -48,7 +48,7 @@
 - [x] Structure de fichiers claire et logique  
 - [x] Code lisible, aéré, et commenté  
 - [ ] Aucune répétition inutile : application stricte de DRY et CoC
-- [ ] Présence d’un README avec instructions d’installation
+- [x] Présence d’un README avec instructions d’installation
 
 ## Validation finale
 
