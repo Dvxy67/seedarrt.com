@@ -5,7 +5,7 @@
         </figure>
         <h2>Art & Élégance</h2>
         <p>Des créations uniques pour une clientèle exigeante</p>
-        <a href="galerie.html" class="btn">Découvrir la galerie</a>
+        <a href="/catalogue" class="btn">Découvrir la galerie</a>
     </section>
 
     <section aria-labelledby="featured-works">
@@ -45,16 +45,16 @@
                 </article>
             </li>
         </ul>
-        <a href="galerie.html" class="btn">Voir toutes les œuvres</a>
+        <a href="/catalogue" class="btn">Voir toutes les œuvres</a>
     </section>
 
     <section aria-labelledby="artist-intro">
         <h2 id="artist-intro">L'artiste</h2>
         <figure>
-            <img src="images/artiste.jpg" alt="Portrait de l'artiste dans son atelier">
+            <img src="uploads/10_the_outcomes_of_this_trippy_life_the_strange_lanscape_blurred_by_the_mist.jpg" alt="Portrait de l'artiste dans son atelier">
         </figure>
         <p>Une brève introduction sur le peintre, son style, sa vision artistique et son parcours. Cette section donne un aperçu de l'artiste et invite à en découvrir plus sur la page dédiée.</p>
-        <a href="a-propos.html">En savoir plus</a>
+        <a href="/a_propo">En savoir plus</a>
     </section>
 
     <section aria-labelledby="testimonials">
@@ -71,6 +71,6 @@
     <section aria-labelledby="contact-intro">
         <h2 id="contact-intro">Une vision artistique unique pour votre intérieur</h2>
         <p>Vous souhaitez une création sur mesure ? Discutons de votre projet et de vos envies.</p>
-        <a href="contact.html" class="btn">Prendre contact</a>
+        <a href="/contact" class="btn">Prendre contact</a>
     </section>
 </main>

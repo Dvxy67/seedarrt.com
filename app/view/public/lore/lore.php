@@ -31,7 +31,7 @@
                 <div class="series-container">
                     <article class="series-item">
                         <div class="series-image">
-                            <img src="/public/uploads/4_Differents ways to bloom_oil painting_2025_50x75cm.jpg" alt="Série Échos Urbains">
+                            <img src="uploads/5_directly_in_the_cave.jpg" alt="Série Échos Urbains">
                         </div>
                         <div class="series-content">
                             <span class="series-year">2010 - 2012</span>
@@ -43,7 +43,7 @@
                     
                     <article class="series-item">
                         <div class="series-image">
-                            <img src="/public/uploads/3_A universe perched in a tank_oil paintins_2024_90x160cm.jpg" alt="Série Horizons Liquides">
+                            <img src="uploads/3_A universe perched in a tank_oil paintins_2024_90x160cm.jpg" alt="Série Horizons Liquides">
                         </div>
                         <div class="series-content">
                             <span class="series-year">2013 - 2015</span>
@@ -55,7 +55,7 @@
                     
                     <article class="series-item">
                         <div class="series-image">
-                            <img src="/public/uploads/11_death.jpg" alt="Série Reflets Intérieurs">
+                            <img src="uploads/11_death.jpg" alt="Série Reflets Intérieurs">
                         </div>
                         <div class="series-content">
                             <span class="series-year">2016 - 2018</span>
@@ -67,7 +67,7 @@
                     
                     <article class="series-item">
                         <div class="series-image">
-                            <img src="/public/uploads/logo.PNG" alt="Série Frontières Numériques">
+                            <img src="uploads/logo.PNG" alt="Série Frontières Numériques">
                         </div>
                         <div class="series-content">
                             <span class="series-year">2020 - Présent</span>
