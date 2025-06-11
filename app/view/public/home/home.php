@@ -16,8 +16,8 @@
                     <figure>
                         <img src="uploads/item/aurora-nocturne/aurora.jpg" alt="Description détaillée de l'œuvre 1">
                         <figcaption>
-                            <h3>Titre de l'œuvre</h3>
-                            <p>Technique, dimensions</p>
+                            <h3>Nocturne</h3>
+                            <p>Peinture à l'huil, 250x100</p>
                         </figcaption>
                     </figure>
                 </article>
@@ -27,8 +27,8 @@
                     <figure>
                         <img src="uploads/item/jardin-oublie/jardin.jpg" alt="Description détaillée de l'œuvre 2">
                         <figcaption>
-                            <h3>Titre de l'œuvre</h3>
-                            <p>Technique, dimensions</p>
+                            <h3>Sommeil honirique</h3>
+                            <p>Peinture à l'huil, 180x120</p>
                         </figcaption>
                     </figure>
                 </article>
@@ -38,8 +38,8 @@
                     <figure>
                         <img src="uploads/item/horizons-lointains/horizons.jpg" alt="Description détaillée de l'œuvre 3">
                         <figcaption>
-                            <h3>Titre de l'œuvre</h3>
-                            <p>Technique, dimensions</p>
+                            <h3>Pensée</h3>
+                            <p>Peinture à l'huile, 100x70</p>
                         </figcaption>
                     </figure>
                 </article>

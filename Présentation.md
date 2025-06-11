@@ -10,4 +10,26 @@ Ma palette est forte, elle a du carrectère et de la personnalité, ce qui est p
 - Stabilité et confiance: psychologie des couleurs associée au prestige 
 - Réference haut de gamme: utiliser par Rolex, Hermès, Bentley, Harrods 
 
-est-ce qie la coe
+**Structure présentation**
+- slide 1: Présentation du siteweb "Seedarrt"
+    - en gros la jexplique que je vais présenter le site web
+- Slide 2: Pour Qui Pour quoi ?:
+    - Qui est mon client et quesqu'il veut ?
+    explication: c'est un peintre, il a besoin d'un site web vitrine crédible(ou qui correspond a son art) pour vendre ces oeuvres en ligne
+    Mon seul offectif est de fournir un travail qui correspond a l'exigence de mon client (qu'il soit sattisfer)
+- Slide 3: Qui est la cible de ses oeuvres ?
+    - photo gents qui souris avec champagne
+    - avec marquer eux 
+- Slide 4: Comment les attirer sur le site ou comments correspondre a monde/exigences ?:
+    - introduction a la charte graphique
+- Slide 5: charte graphique 
+    - les couleurs: 
+       Vert signature:  #1B4D4D 
+       Vert hover: #2A7373
+       Crème luxe: #f9f9f7
+       Noir élégents: #111
+
+    - explication des couleurs
+- Slide 5: choix de design UX
+- Slide 6: les fonctionnalité 
+

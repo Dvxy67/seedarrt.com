@@ -10,7 +10,7 @@
             <div class="container">
                 <article class="about-artist">
                     <div class="artist-image">
-                        <img src="uploads/portrait_seedarrt.PNG" alt="Portrait de l'artiste">
+                        <img src="uploads/10_the_outcomes_of_this_trippy_life_the_strange_lanscape_blurred_by_the_mist.jpg" alt="Portrait de l'artiste">
                     </div>
                     <div class="artist-content">
                         <h2>Bienvenue dans mon univers artistique</h2>

@@ -129,24 +129,6 @@
             </div>
         </section>
         
-        <section class="map-section">
-            <div class="container">
-                <header class="section-header">
-                    <h2 class="section-title">Localisation de l'atelier</h2>
-                    <p class="section-subtitle">Venez découvrir mon univers artistique en personne</p>
-                </header>
-                
-                <div class="map-container">
-                    <div class="map-placeholder">
-                        <!-- Remplacer par une iframe Google Maps -->
-                        <div class="map-image">
-                            <img src="/api/placeholder/1200/500" alt="Carte de localisation de l'atelier">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
         <section class="faq-section bg-light">
             <div class="container">
                 <header class="section-header">
