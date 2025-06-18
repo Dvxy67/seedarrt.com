@@ -28,20 +28,29 @@ function add()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $item_id = $_POST['item_id'] ?? null;
-        $quantity = $_POST['quantity'] ?? 1;
+        $quantity = (int)($_POST['quantity'] ?? 1);
         
-        if ($item_id) {
+        if ($item_id && $quantity > 0) {
             $cart_id = getCartId();
             $item = item_getById($item_id);
             
             if ($item) {
                 $price = $item['prix_promo'] ?: $item['prix'];
-                panier_addItem($cart_id, $item_id, $quantity, $price);
+                $success = panier_addItem($cart_id, $item_id, $quantity, $price);
                 
-                // Redirection vers le panier
-                header('Location: /panier');
-                exit;
+                if ($success) {
+                    // Redirection avec message de succès
+                    $_SESSION['cart_message'] = "Article ajouté au panier avec succès !";
+                    header('Location: /panier');
+                    exit;
+                } else {
+                    $_SESSION['cart_error'] = "Erreur lors de l'ajout au panier.";
+                }
+            } else {
+                $_SESSION['cart_error'] = "Article non trouvé.";
             }
+        } else {
+            $_SESSION['cart_error'] = "Données invalides.";
         }
     }
     
@@ -56,10 +65,17 @@ function update()
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cart_line_id = $_POST['cart_line_id'] ?? null;
-        $quantity = $_POST['quantity'] ?? 1;
+        $quantity = (int)($_POST['quantity'] ?? 1);
         
         if ($cart_line_id && $quantity > 0) {
-            panier_updateQuantity($cart_line_id, $quantity);
+            $success = panier_updateQuantity($cart_line_id, $quantity);
+            if ($success) {
+                $_SESSION['cart_message'] = "Quantité mise à jour.";
+            } else {
+                $_SESSION['cart_error'] = "Erreur lors de la mise à jour.";
+            }
+        } else {
+            $_SESSION['cart_error'] = "Données invalides.";
         }
     }
     
@@ -71,8 +87,17 @@ function update()
 // Supprimer un item du panier
 function remove($cart_line_id = null)
 {
+    if (!$cart_line_id && isset($_POST['cart_line_id'])) {
+        $cart_line_id = $_POST['cart_line_id'];
+    }
+    
     if ($cart_line_id) {
-        panier_removeItem($cart_line_id);
+        $success = panier_removeItem($cart_line_id);
+        if ($success) {
+            $_SESSION['cart_message'] = "Article supprimé du panier.";
+        } else {
+            $_SESSION['cart_error'] = "Erreur lors de la suppression.";
+        }
     }
     
     header('Location: /panier');
@@ -84,7 +109,13 @@ function remove($cart_line_id = null)
 function clear()
 {
     $cart_id = getCartId();
-    panier_clear($cart_id);
+    $success = panier_clear($cart_id);
+    
+    if ($success) {
+        $_SESSION['cart_message'] = "Panier vidé.";
+    } else {
+        $_SESSION['cart_error'] = "Erreur lors du vidage du panier.";
+    }
     
     header('Location: /panier');
     exit;
@@ -99,6 +130,7 @@ function checkout()
     $total = panier_getTotal($cart_id);
     
     if (empty($cart_items)) {
+        $_SESSION['cart_error'] = "Votre panier est vide.";
         header('Location: /panier');
         exit;
     }
@@ -122,6 +154,7 @@ function process_order()
         $cart_items = panier_getItems($cart_id);
         
         if (empty($cart_items)) {
+            $_SESSION['cart_error'] = "Votre panier est vide.";
             header('Location: /panier');
             exit;
         }
@@ -130,11 +163,17 @@ function process_order()
         // Par exemple : enregistrer la commande, envoyer un email, etc.
         
         // Marquer le panier comme commandé
-        panier_markAsOrdered($cart_id);
+        $success = panier_markAsOrdered($cart_id);
         
-        // Redirection vers page de confirmation
-        header('Location: /panier/confirmation');
-        exit;
+        if ($success) {
+            // Créer un nouveau cart_id pour les futurs achats
+            unset($_SESSION['cart_id']);
+            $_SESSION['order_success'] = "Votre commande a été traitée avec succès !";
+            header('Location: /panier/confirmation');
+            exit;
+        } else {
+            $_SESSION['cart_error'] = "Erreur lors du traitement de la commande.";
+        }
     }
     
     header('Location: /panier/checkout');
@@ -164,14 +203,32 @@ function getCartId()
 }
 
 // =============================
-// API pour récupérer le nombre d'items dans le panier (AJAX)
-function count()
+// API pour récupérer le nombre d'items dans le panier (AJAX) - CORRIGÉ
+function cart_count()
 {
+    // Démarrer la session si ce n'est pas fait
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    
     header('Content-Type: application/json');
+    header('Cache-Control: no-cache, must-revalidate');
     
-    $cart_id = getCartId();
-    $count = panier_getItemCount($cart_id);
-    
-    echo json_encode(['count' => $count]);
+    try {
+        $cart_id = getCartId();
+        $item_count = panier_getItemCount($cart_id);
+        
+        echo json_encode([
+            'success' => true,
+            'count' => $item_count
+        ]);
+    } catch (Exception $e) {
+        http_response_code(500);
+        echo json_encode([
+            'success' => false,
+            'error' => 'Erreur lors du calcul du panier',
+            'message' => $e->getMessage()
+        ]);
+    }
     exit;
 }
