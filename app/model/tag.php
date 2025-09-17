@@ -33,10 +33,10 @@ function model_tag_create($data)
     ]);
 }
 
-// Met à jour un tag existant
+// Met à jour un tag existant (CORRIGÉ)
 function model_tag_update($id, $data)
 {
-    $sql = "UPDATE tag SET slug = ?, nom = ? WHERE id_tag = ?";
+    $sql = "UPDATE tag SET nom = ?, slug = ?, description = ?, couleur = ?, parent_tag_id = ?, visible = ? WHERE id_tag = ?";
     $stmt = db()->prepare($sql);
     return $stmt->execute([
         $data['nom'],

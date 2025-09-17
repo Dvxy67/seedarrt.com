@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../../model/tag.php';
-require_once __DIR__ . '/../../model/item.php';
 
 // =============================
 function tag() {
@@ -16,7 +15,7 @@ function create() {
 }
 
 // =============================
-function tag_store() {
+function store() {
     $data = [
         'nom' => $_POST['nom'],
         'slug' => $_POST['slug'],
@@ -25,11 +24,11 @@ function tag_store() {
         'parent_tag_id' => !empty($_POST['parent_tag_id']) ? $_POST['parent_tag_id'] : null,
         'visible' => $_POST['visible'] ?? 1
     ];
+    
     model_tag_create($data);
     header('Location: /admin/tag');
     exit;
 }
-
 
 // =============================
 function edit($id) {
@@ -39,10 +38,14 @@ function edit($id) {
 }
 
 // =============================
-function tag_update($id) {
+function update($id) {
     $data = [
+        'nom' => $_POST['nom'],
         'slug' => $_POST['slug'],
-        'nom' => $_POST['nom']
+        'description' => $_POST['description'] ?? null,
+        'couleur' => $_POST['couleur'] ?? '#333333',
+        'parent_tag_id' => !empty($_POST['parent_tag_id']) ? $_POST['parent_tag_id'] : null,
+        'visible' => $_POST['visible'] ?? 1
     ];
 
     model_tag_update($id, $data); 
@@ -51,29 +54,8 @@ function tag_update($id) {
 }
 
 // =============================
-function tag_delete($id) {
+function delete($id) {
     model_tag_delete($id); 
     header('Location: /admin/tag');
     exit;
 }
-
-// ALIAS (me permet de télécommande fonctions) ou de délégué.
-// function create() {
-//     tag_createForm();
-// }
-
-// function store() {
-//     tag_store();
-// }
-
-// function edit($id) {
-//     tag_edit($id);
-// }
-
-// function update() {
-//     tag_update();
-// }
-
-// function delete($id) {
-//     tag_delete($id);
-// }
