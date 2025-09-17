@@ -44,18 +44,46 @@
     </main>
     
     <script>
-        // JavaScript pour interactions
         document.addEventListener('DOMContentLoaded', function() {
-            // Gestion des liens actifs dans la navigation
-            const currentPath = window.location.pathname;
-            const navLinks = document.querySelectorAll('.main-nav li a');
-            
-            navLinks.forEach(link => {
-                if (currentPath.includes(link.getAttribute('href'))) {
-                    link.parentElement.classList.add('active');
-                }
+          // Normalise le chemin courant (retire les slashs finaux)
+          const currentPath = new URL(window.location.href).pathname.replace(/\/+$/, '') || '/';
+        
+          // Adapte le sélecteur à ta nav si besoin
+          const navLinks = document.querySelectorAll('.main-nav li a, nav li a, #sidebar li a');
+        
+          navLinks.forEach(link => {
+            // Résout les href relatifs et normalise
+            const linkPath = new URL(link.getAttribute('href'), window.location.origin)
+                              .pathname.replace(/\/+$/, '') || '/';
+        
+            // Dashboard = exact seulement (pas de “préfixe”)
+            const isDashboardLink = (linkPath === '/admin');
+        
+            // 1) exact
+            let isActive = (currentPath === linkPath);
+        
+            // 2) préfixe avec frontière de segment, sauf pour Dashboard
+            if (!isActive && !isDashboardLink && linkPath !== '/' && currentPath.startsWith(linkPath + '/')) {
+              isActive = true;
+            }
+        
+            // Applique la classe .active à la fois sur <li> et <a> (selon ton CSS)
+            const li = link.closest('li');
+            if (li) li.classList.toggle('active', isActive);
+            link.classList.toggle('active', isActive);
+        
+            // Log de débogage (regarde dans la console)
+            console.debug('[NAV]', {
+              currentPath,
+              linkText: link.textContent.trim(),
+              linkPath,
+              isDashboardLink,
+              isActive
             });
+          });
         });
-    </script>
+     </script>
+        
+        
 </body>
 </html>

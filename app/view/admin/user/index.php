@@ -1,5 +1,3 @@
-<?php // Liste des utilisateurs // ?>
-
 <header class="dashboard-header">
     <h2>Gestion des Utilisateurs</h2>
     <div class="user-info">
