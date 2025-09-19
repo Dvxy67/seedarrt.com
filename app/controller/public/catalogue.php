@@ -11,11 +11,11 @@ function catalogue() {
     $itemsPerPage = 12;
     $offset = ($page - 1) * $itemsPerPage;
     
-    // Construction de la requête SQL
+    // Construction de la requête SQL avec jointure
     $sql = "SELECT i.*, c.nom as categorie_nom, c.slug as categorie_slug 
             FROM item i 
             LEFT JOIN categorie c ON i.categorie_id = c.id_categorie 
-            WHERE i.statut = 'actif'";
+            WHERE i.statut IN ('actif', 'en_promotion')"; // CORRIGÉ : Inclure les promotions
     
     $params = [];
     
@@ -109,9 +109,7 @@ function detail($slug)
     
     if(!$item) {
         http_response_code(404);
-        render('error/404.php', [
-            'head_title' => 'Page non trouvée | Seedarrt'
-        ]);
+        echo "Item non trouvé";
         return;
     }
     
@@ -136,7 +134,7 @@ function search_ajax()
     
     $sql = "SELECT i.nom, i.slug, i.prix, i.prix_promo, i.image_url 
             FROM item i 
-            WHERE i.statut = 'actif' 
+            WHERE i.statut IN ('actif', 'en_promotion') 
             AND (i.nom LIKE ? OR i.description LIKE ?) 
             LIMIT 10";
     

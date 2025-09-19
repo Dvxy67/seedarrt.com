@@ -33,14 +33,16 @@
             
             <div class="filter-categories">
                 <a href="/catalogue" class="filter-btn <?= !$data['filters']['categorie'] ? 'active' : '' ?>">
-                    Toutes les œuvres
+                    Toutes les œuvres (<?= $data['pagination']['totalItems'] ?>)
                 </a>
-                <?php foreach($data['categories'] as $categorie): ?>
-                    <a href="/catalogue?categorie=<?= urlencode($categorie['slug']) ?>" 
-                       class="filter-btn <?= $data['filters']['categorie'] == $categorie['slug'] ? 'active' : '' ?>">
-                        <?= htmlspecialchars($categorie['nom']) ?>
-                    </a>
-                <?php endforeach; ?>
+                <?php if (!empty($data['categories'])): ?>
+                    <?php foreach($data['categories'] as $categorie): ?>
+                        <a href="/catalogue?categorie=<?= urlencode($categorie['slug']) ?>" 
+                           class="filter-btn <?= $data['filters']['categorie'] == $categorie['slug'] ? 'active' : '' ?>">
+                            <?= htmlspecialchars($categorie['nom']) ?>
+                        </a>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
             
             <div class="sort-filter">
@@ -118,6 +120,7 @@
                             </div>
                             <div class="art-overlay">
                                 <a href="/catalogue/detail/<?= $item['slug'];?>" class="overlay-btn">Voir détails</a>
+                                <?php if($item['statut'] != 'rupture' && ($item['quantite_stock'] ?? 0) > 0): ?>
                                 <form action="/panier/add" method="POST" style="display: inline;">
                                     <input type="hidden" name="item_id" value="<?= $item['id_item'] ?>">
                                     <input type="hidden" name="quantity" value="1">
@@ -125,17 +128,32 @@
                                         <i class="fas fa-shopping-cart"></i>
                                     </button>
                                 </form>
+                                <?php endif; ?>
                             </div>
                             <div class="art-info">
                                 <h3 class="art-title"><?= htmlspecialchars($item['nom']) ?></h3>
                                 
-                                <?php if ($item['categorie_nom']): ?>
+                                <!-- Catégorie avec fallback -->
                                 <div class="art-category">
-                                    <a href="/catalogue?categorie=<?= urlencode($item['categorie_slug']) ?>">
-                                        <?= htmlspecialchars($item['categorie_nom']) ?>
-                                    </a>
+                                    <?php if (!empty($item['categorie_nom'])): ?>
+                                        <a href="/catalogue?categorie=<?= urlencode($item['categorie_slug']) ?>">
+                                            <?= htmlspecialchars($item['categorie_nom']) ?>
+                                        </a>
+                                    <?php elseif ($item['categorie_id']): ?>
+                                        <?php  
+                                        switch($item['categorie_id']) {
+                                            case 1: echo "Peinture"; break;
+                                            case 2: echo "Print"; break;
+                                            case 3: echo "Asset 3D"; break;
+                                            case 4: echo "Peinture à l'huile"; break;
+                                            case 5: echo "Aquarelle"; break;
+                                            default: echo "Catégorie " . $item['categorie_id'];
+                                        }
+                                        ?>
+                                    <?php else: ?>
+                                        Non catégorisé
+                                    <?php endif; ?>
                                 </div>
-                                <?php endif; ?>
                                 
                                 <div class="art-price">
                                     <?php if($item['prix_promo']): ?>
@@ -146,9 +164,17 @@
                                     <?php endif; ?>
                                 </div>
                                 
+                                <!-- Badges de statut -->
                                 <?php if($item['statut'] == 'rupture'): ?>
                                     <div class="art-status out-of-stock">Rupture de stock</div>
-                                <?php elseif($item['prix_promo']): ?>
+                                <?php elseif($item['statut'] == 'en_promotion' && $item['prix_promo']): ?>
+                                    <div class="art-status on-sale">
+                                        <?php 
+                                        $reduction = round(100 - ($item['prix_promo'] / $item['prix'] * 100));
+                                        echo "Promo -" . $reduction . "%";
+                                        ?>
+                                    </div>
+                                <?php elseif($item['statut'] == 'en_promotion'): ?>
                                     <div class="art-status on-sale">Promotion !</div>
                                 <?php endif; ?>
                             </div>
@@ -283,6 +309,7 @@
     padding: 4px 8px;
     border-radius: 4px;
     margin-top: 8px;
+    display: inline-block;
 }
 
 .art-status.out-of-stock {
@@ -300,6 +327,17 @@
     border: none;
     padding: 8px;
     margin-left: 5px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 8px;
+}
+
+.promo-price {
+    color: #dc3545;
+    font-weight: bold;
 }
 
 .pagination {
