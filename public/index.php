@@ -6,7 +6,9 @@ require_once(SITE_ROOT . 'config/db.php');
 
 
 // On découpe l’URL demandée (ex: /admin/item/create) en morceaux
-$uri_parts = explode('/', $_SERVER["REQUEST_URI"]);
+$requestUri = $_SERVER['REQUEST_URI'] ?? '/';
+$path = parse_url($requestUri, PHP_URL_PATH) ?? '/';
+$uri_parts = explode('/', $path);
 array_shift($uri_parts); // On supprime le premier élément vide (car l'URL commence par /)
 
 
