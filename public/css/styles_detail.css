@@ -19,7 +19,9 @@ body {
     padding: 0 20px;
 }
 
-/* Header and Responsive Navigation */
+/* ==========================================
+   HEADER AND RESPONSIVE NAVIGATION
+   ========================================== */
 header {
     padding: 30px 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -162,7 +164,9 @@ nav ul li a:hover:after {
     }
 }
 
-/* Breadcrumb */
+/* ==========================================
+   BREADCRUMB
+   ========================================== */
 .breadcrumb {
     padding: 20px 0;
     background-color: #fff;
@@ -195,7 +199,9 @@ nav ul li a:hover:after {
     color: #1B4D4D;
 }
 
-/* Artwork Detail Section */
+/* ==========================================
+   ARTWORK DETAIL SECTION
+   ========================================== */
 .artwork-detail {
     padding: 80px 0;
 }
@@ -236,6 +242,7 @@ nav ul li a:hover:after {
     width: 100%;
     height: auto;
     display: block;
+    transition: all 0.3s ease;
 }
 
 .thumbnail-container {
@@ -264,6 +271,9 @@ nav ul li a:hover:after {
     object-fit: cover;
 }
 
+/* ==========================================
+   ARTWORK INFO - STYLES HARMONISÉS
+   ========================================== */
 .artwork-info {
     padding: 0 0 0 20px;
 }
@@ -295,13 +305,397 @@ nav ul li a:hover:after {
     margin-bottom: 30px;
 }
 
+/* PRIX HARMONISÉ */
 .artwork-price {
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 600;
     color: #1B4D4D;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    font-family: 'Cormorant Garamond', serif;
 }
 
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.promo-price {
+    color: #2A7373;
+    font-weight: 700;
+}
+
+/* STATUT ET DISPONIBILITÉ HARMONISÉS */
+.artwork-status {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.status-badge.available {
+    background-color: rgba(27, 77, 77, 0.1);
+    color: #1B4D4D;
+    border: 2px solid rgba(27, 77, 77, 0.2);
+}
+
+.status-badge.out-of-stock {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 2px solid rgba(220, 53, 69, 0.2);
+}
+
+.status-badge.unavailable {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #856404;
+    border: 2px solid rgba(255, 193, 7, 0.2);
+}
+
+.stock-warning {
+    color: #1B4D4D;
+    font-weight: 500;
+    font-size: 13px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* SECTION AJOUT AU PANIER HARMONISÉE */
+.add-to-cart-section {
+    background: linear-gradient(135deg, rgba(27, 77, 77, 0.02) 0%, rgba(42, 115, 115, 0.03) 100%);
+    padding: 35px;
+    border-radius: 12px;
+    margin: 35px 0;
+    border: 1px solid rgba(27, 77, 77, 0.08);
+    position: relative;
+}
+
+.add-to-cart-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1B4D4D, #2A7373);
+    border-radius: 12px 12px 0 0;
+}
+
+/* SÉLECTEUR DE QUANTITÉ ÉLÉGANT */
+.quantity-selector {
+    margin-bottom: 25px;
+}
+
+.quantity-selector label {
+    display: block;
+    margin-bottom: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quantity-controls {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.quantity-controls:hover {
+    border-color: #1B4D4D;
+    box-shadow: 0 4px 12px rgba(27, 77, 77, 0.1);
+}
+
+.qty-btn {
+    background: #f8f9fa;
+    color: #1B4D4D;
+    border: none;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.qty-btn:hover {
+    background: #1B4D4D;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.qty-btn:active {
+    transform: scale(0.95);
+}
+
+.qty-input {
+    width: 80px;
+    height: 45px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1B4D4D;
+    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.qty-input:focus {
+    outline: none;
+    background: rgba(27, 77, 77, 0.02);
+}
+
+/* BOUTON AJOUTER AU PANIER */
+.btn-add-to-cart {
+    background: linear-gradient(135deg, #1B4D4D 0%, #2A7373 100%);
+    color: #fff;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(27, 77, 77, 0.25);
+}
+
+.btn-add-to-cart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-add-to-cart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(27, 77, 77, 0.4);
+}
+
+.btn-add-to-cart:hover::before {
+    left: 100%;
+}
+
+.btn-add-to-cart:active {
+    transform: translateY(-1px);
+}
+
+.btn-add-to-cart i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.btn-add-to-cart:hover i {
+    transform: translateX(3px);
+}
+
+/* CARACTÉRISTIQUES HARMONISÉES */
+.artwork-specs {
+    margin: 35px 0;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.artwork-specs h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.artwork-specs h3::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #1B4D4D, #2A7373);
+    bottom: 0;
+    left: 0;
+}
+
+.artwork-specs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.artwork-specs li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.artwork-specs li:last-child {
+    border-bottom: none;
+}
+
+.artwork-specs strong {
+    color: #1B4D4D;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+/* DESCRIPTION HARMONISÉE */
+.artwork-description {
+    margin: 35px 0;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.description-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 18px;
+    position: relative;
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.description-title::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #1B4D4D, #2A7373);
+    bottom: 0;
+    left: 0;
+}
+
+.description-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ACTIONS HARMONISÉES */
+.artwork-actions {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-wishlist, .btn-share {
+    background: transparent;
+    border: 2px solid #e0e0e0;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-wishlist::before, .btn-share::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(27, 77, 77, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-wishlist:hover, .btn-share:hover {
+    border-color: #1B4D4D;
+    color: #1B4D4D;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(27, 77, 77, 0.15);
+}
+
+.btn-wishlist:hover::before, .btn-share:hover::before {
+    left: 100%;
+}
+
+.btn-wishlist i, .btn-share i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.btn-wishlist:hover i, .btn-share:hover i {
+    transform: scale(1.1);
+}
+
+.btn-wishlist.wishlisted {
+    background-color: rgba(27, 77, 77, 0.05) !important;
+    border-color: #1B4D4D !important;
+    color: #1B4D4D !important;
+}
+
+/* ==========================================
+   TAGS ET ÉLÉMENTS COMPLÉMENTAIRES
+   ========================================== */
 .artwork-tags {
     display: flex;
     flex-wrap: wrap;
@@ -324,24 +718,6 @@ nav ul li a:hover:after {
     color: #fff;
 }
 
-.artwork-description {
-    margin-bottom: 40px;
-}
-
-.description-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 15px;
-    color: #111;
-}
-
-.description-text {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #666;
-}
-
 .artwork-details {
     margin-bottom: 40px;
 }
@@ -362,41 +738,65 @@ nav ul li a:hover:after {
     color: #111;
 }
 
-.artwork-actions {
-    display: flex;
-    gap: 20px;
-}
-
+/* BOUTONS GÉNÉRIQUES HARMONISÉS */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 14px 30px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none;
-    transition: all 0.3s;
+    border: 2px solid transparent;
     cursor: pointer;
-    border: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn-primary {
     background-color: #1B4D4D;
     color: #fff;
+    border-color: #1B4D4D;
 }
 
 .btn-primary:hover {
     background-color: #2A7373;
+    border-color: #2A7373;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(27, 77, 77, 0.3);
 }
 
 .btn-secondary {
     background-color: transparent;
     color: #1B4D4D;
-    border: 1px solid #1B4D4D;
+    border-color: #1B4D4D;
 }
 
 .btn-secondary:hover {
     background-color: #1B4D4D;
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(27, 77, 77, 0.2);
 }
 
 .like-button {
@@ -424,7 +824,9 @@ nav ul li a:hover:after {
     color: #2A7373;
 }
 
-/* Related Artworks */
+/* ==========================================
+   RELATED ARTWORKS
+   ========================================== */
 .related-artworks {
     padding: 80px 0;
     background-color: #fff;
@@ -502,7 +904,9 @@ nav ul li a:hover:after {
     color: #1B4D4D;
 }
 
-/* Footer */
+/* ==========================================
+   FOOTER
+   ========================================== */
 footer {
     background-color: #111;
     color: #fff;
@@ -598,7 +1002,47 @@ footer {
     color: #999;
 }
 
-/* Responsive */
+/* ==========================================
+   ANIMATIONS ET EFFETS
+   ========================================== */
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* FEEDBACK NOTIFICATIONS */
+.feedback {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-success { background: linear-gradient(135deg, #28a745, #20c997); }
+.feedback-warning { background: linear-gradient(135deg, #ffc107, #fd7e14); }
+.feedback-error { background: linear-gradient(135deg, #dc3545, #e83e8c); }
+.feedback-info { background: linear-gradient(135deg, #1B4D4D, #2A7373); }
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
 @media (max-width: 992px) {
     .artwork-container {
         grid-template-columns: 1fr;
@@ -627,7 +1071,6 @@ footer {
 
     .artwork-actions {
         flex-direction: column;
-        gap: 15px;
     }
 
     .btn {
@@ -638,5 +1081,43 @@ footer {
     .thumbnail {
         width: 60px;
         height: 60px;
+    }
+
+    .add-to-cart-section {
+        padding: 25px 20px;
+    }
+    
+    .quantity-controls {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .qty-input {
+        flex: 1;
+        max-width: 80px;
+    }
+    
+    .btn-wishlist, .btn-share {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .artwork-specs, .artwork-description {
+        padding: 20px;
+    }
+    
+    .artwork-status {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .artwork-info {
+        padding: 0;
+    }
+}
+@media (max-width: 576px) {
+    .btn-add-to-cart {
+        padding: 16px 30px;
+        font-size: 13px;
     }
 }
