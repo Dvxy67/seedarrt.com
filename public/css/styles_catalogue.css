@@ -289,7 +289,7 @@ nav ul li a:hover:after {
     color: #1B4D4D; 
 }
 
-/* Gallery */
+/* Gallery - Version améliorée */
 .gallery {
     padding: 60px 0;
 }
@@ -322,48 +322,220 @@ nav ul li a:hover:after {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: transform 0.5s, filter 0.3s;
 }
 
 .art-item:hover .art-image img {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(0.85);
 }
 
+/* Art Overlay - Version améliorée */
 .art-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(27, 77, 77, 0.15), rgba(42, 115, 115, 0.25));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
+    padding: 20px;
 }
 
 .art-item:hover .art-overlay {
     opacity: 1;
 }
 
+/* Animation d'entrée pour les boutons */
+.art-overlay > * {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.art-item:hover .art-overlay > * {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.art-overlay > *:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.art-overlay > *:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* Bouton "Voir détails" */
 .overlay-btn {
-    background-color: #fff;
-    color: #111;
-    border: none;
-    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #1B4D4D;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 28px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    min-width: 140px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Effet de brillance pour les boutons */
+.overlay-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.overlay-btn:hover::before {
+    left: 100%;
 }
 
 .overlay-btn:hover {
-    background-color: #1B4D4D; 
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(27, 77, 77, 0.3);
     color: #fff;
+    background: rgba(27, 77, 77, 0.9);
+    border-color: rgba(27, 77, 77, 0.3);
+}
+
+.overlay-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulaire du panier - suppression des styles par défaut */
+.art-overlay form {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+/* Bouton panier - styles spéciaux */
+.btn-cart {
+    background: linear-gradient(135deg, #2A7373, #1B4D4D) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 14px 24px !important;
+    border-radius: 50px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    min-width: 140px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    box-shadow: 0 8px 25px rgba(42, 115, 115, 0.3) !important;
+    cursor: pointer !important;
+    font-family: 'Montserrat', sans-serif !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+}
+
+/* Icône FontAwesome dans le bouton panier */
+.btn-cart i.fas.fa-shopping-cart {
+    font-size: 12px !important;
+    margin: 0 !important;
+}
+
+/* Ajout du texte "Ajouter" après l'icône */
+.btn-cart::after {
+    content: 'Ajouter' !important;
+}
+
+/* Effet de pulsation au survol */
+.btn-cart::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.btn-cart:hover {
+    background: linear-gradient(135deg, #1B4D4D, #0F3333) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 40px rgba(27, 77, 77, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.btn-cart:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-cart:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 25px rgba(27, 77, 77, 0.3) !important;
+}
+
+/* Animation de pulsation pour attirer l'attention */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.art-item:hover .btn-cart {
+    animation: pulse 2s infinite;
+}
+
+/* Effet de particules subtil */
+.art-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    opacity: 0;
+    animation: sparkle 3s linear infinite;
+    pointer-events: none;
+}
+
+.art-item:hover .art-overlay::after {
+    opacity: 1;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.3; }
 }
 
 .art-info {
@@ -423,19 +595,6 @@ nav ul li a:hover:after {
 .art-status.on-sale {
     background: rgba(42, 115, 115, 0.12);
     color: #2A7373;
-}
-
-.btn-cart {
-    background: #2A7373 !important;
-    color: #fff !important;
-    border: none;
-    padding: 8px;
-    margin-left: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn-cart:hover {
-    background: #1B4D4D !important;
 }
 
 .original-price {
@@ -647,6 +806,40 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
     }
+
+    /* Overlay responsive */
+    .art-overlay {
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .overlay-btn, .btn-cart {
+        padding: 10px 20px !important;
+        font-size: 9px !important;
+        min-width: 110px !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .btn-cart i.fas.fa-shopping-cart {
+        font-size: 10px !important;
+    }
+    
+    .btn-cart::after {
+        content: 'Ajouter' !important;
+    }
+
+    .art-overlay > * {
+        transform: translateY(15px);
+        transition-duration: 0.3s;
+    }
+    
+    .art-overlay > *:nth-child(1) {
+        transition-delay: 0.05s;
+    }
+    
+    .art-overlay > *:nth-child(2) {
+        transition-delay: 0.1s;
+    }
 }
 
 @media (max-width: 576px) {
@@ -656,5 +849,16 @@ footer {
     
     nav ul li {
         margin-left: 20px;
+    }
+
+    .art-overlay {
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .overlay-btn, .btn-cart {
+        padding: 8px 16px !important;
+        font-size: 8px !important;
+        min-width: 90px !important;
     }
 }
